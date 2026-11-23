@@ -125,10 +125,10 @@
 .game-choices label:not(:has(input:checked)) + .game-option { display: none; }
 .md-typeset .game-card {
   box-sizing: border-box;
-  inline-size: min(100%, 23rem);
-  padding: 1rem 1.1rem;
+  inline-size: min(100%, 17rem);
+  padding: 1.05rem .95rem;
   margin-block: .55rem;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
   border-radius: .75rem;
   background: linear-gradient(var(--wiki-panel), var(--wiki-panel)) padding-box,
               linear-gradient(135deg, var(--card-from), var(--card-to)) border-box;
@@ -136,13 +136,25 @@
   overflow-wrap: anywhere;
 }
 .md-typeset .game-card p { margin-block: .4rem; }
-.md-typeset .game-card-icon { display: block; inline-size: 2.35rem; margin: 0 auto .65rem; object-fit: contain; }
+.md-typeset img.game-card-icon {
+  display: block;
+  inline-size: 3.25rem;
+  block-size: auto;
+  margin: 0 auto .8rem;
+  object-fit: contain;
+}
+.md-typeset img.game-card-icon[src*="/assets/game/stats/"] { inline-size: 2.4rem; }
 .md-typeset .game-card-name { font-weight: 750; font-size: 1.05rem; }
 .md-typeset .game-quality {
   color: color-mix(in srgb, var(--quality) 82%, white);
   border-block-end: 1px solid var(--quality);
 }
-.md-typeset .game-stars { color: var(--card-from); letter-spacing: .1em; }
+.md-typeset .game-stars {
+  display: block;
+  color: var(--card-from);
+  letter-spacing: .12em;
+  margin-block-start: .15rem;
+}
 .md-typeset .game-card-role, .md-typeset .game-range-label { color: var(--wiki-quiet); }
 .md-typeset .game-card ul { padding: 0; margin: .35rem 0; list-style: none; }
 .md-typeset .game-card ul li { margin-inline-start: 0; }

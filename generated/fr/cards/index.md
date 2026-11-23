@@ -177,6 +177,8 @@
 
 ## Pool historique
 
+- [Chance de Poison · PathID 17295](card-17295-2f76e26424ad72e2.md)
+- [Chance de Poison · PathID 17296](card-17296-bd7c13901dd884fb.md)
 - [Puissance de Poison](card-17297-9ece5247c223406c.md)
 - [Cumul de Poison](card-17298-79fafb4f95b5ec17.md)
 - [Dégâts de zone](card-17299-be04497dbd8c3365.md)

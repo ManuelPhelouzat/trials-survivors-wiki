@@ -177,6 +177,8 @@
 
 ## Legacy pool
 
+- [Poison Chance · PathID 17295](card-17295-2f76e26424ad72e2.md)
+- [Poison Chance · PathID 17296](card-17296-bd7c13901dd884fb.md)
 - [Poison Power](card-17297-9ece5247c223406c.md)
 - [Poison Stack](card-17298-79fafb4f95b5ec17.md)
 - [Area Of Effect Damage](card-17299-be04497dbd8c3365.md)
