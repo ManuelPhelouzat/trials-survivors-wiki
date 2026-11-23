@@ -16,7 +16,10 @@ from urllib.parse import unquote, urljoin, urlsplit
 
 LANGS = ("fr", "en")
 PAGE = re.compile(r"(fr|en)/(skills|cards|constellations)/[a-z0-9][a-z0-9-]*\.md")
-ASSET = re.compile(r"public-assets/(constellations|stats)/([0-9a-f]{64})\.png")
+IMAGE_NAME = r"(constellations|stats)/([0-9a-f]{64})\.png"
+ASSET = re.compile(r"public-assets/" + IMAGE_NAME)
+GAME_IMAGE = re.compile(r"assets/game/" + IMAGE_NAME)
+MARKDOWN_IMAGE = re.compile(r"(!\[[^\]\n]*\]\()\.\./(public-assets/" + IMAGE_NAME + r")(\))")
 ASSET_BUDGET = 1024 * 1024
 SKILL_LINK = re.compile(r"^- \[(.*)\]\(([a-z0-9-]+\.md)\)$", re.MULTILINE)
 EDITORIAL = re.compile(r"(fr|en)/(?:index\.md|about\.md|history\.md|notes/[\w-]+\.md)", re.UNICODE)
@@ -67,7 +70,11 @@ def publication(root):
     return manifest, source
 
 
-def assemble(root, docs):
+def shared_path(name):
+    return "assets/game/" + name.removeprefix("public-assets/")
+
+
+def assemble(root, docs, base_url):
     manifest, generated = publication(root)
     community = files_in(root / "editorial")
     overlap = generated.keys() & community.keys()
@@ -81,10 +88,6 @@ def assemble(root, docs):
                 raise ValueError(f"Page éditoriale requise · {lang}/{page}.md")
     for name, source in sorted((generated | community).items()):
         if ASSET.fullmatch(name):
-            for lang in LANGS:
-                target = docs / lang / name
-                target.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copyfile(source, target)
             continue
         target = docs / name
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -92,7 +95,14 @@ def assemble(root, docs):
             value = source.read_text(encoding="utf-8").replace("{{BUILD}}", manifest["steam_build_id"])
             target.write_text(value, encoding="utf-8")
         else:
-            shutil.copyfile(source, target)
+            def shared_image(match):
+                image = match[2]
+                if image not in generated:
+                    raise ValueError(f"Image Markdown absente du manifeste · {name} · {image}")
+                return match[1] + base_url + shared_path(image) + ")"
+
+            value = source.read_text(encoding="utf-8")
+            target.write_text(MARKDOWN_IMAGE.sub(shared_image, value), encoding="utf-8")
     for note in sorted(community):
         web_path = PurePosixPath(note)
         if web_path.parent.name != "notes":
@@ -182,9 +192,23 @@ def validate_html(root, base_url):
             page.feed(source.read_text(encoding="utf-8"))
             views[path] = page
     total, external = 0, 0
-    images = {name for name in files if re.fullmatch(r"(fr|en)/" + ASSET.pattern, name)}
+    images = {name: GAME_IMAGE.fullmatch(name)[2] for name in files if GAME_IMAGE.fullmatch(name)}
     used_images = set()
     errors = []
+    image_digests = set(images.values())
+    for name, path in files.items():
+        if name.startswith("assets/game/") and name not in images:
+            errors.append(f"{name} · chemin d’image partagée inattendu")
+        elif re.fullmatch(r"(fr|en)/public-assets/.+", name):
+            errors.append(f"{name} · image copiée dans une langue")
+        elif image_digests and path.suffix.lower() == ".png":
+            digest = stamp(path)["sha256"]
+            if name in images and digest != images[name]:
+                errors.append(f"{name} · empreinte d’image partagée invalide")
+            elif name not in images and digest in image_digests:
+                errors.append(f"{name} · copie d’une image partagée")
+    if len(image_digests) != len(images):
+        errors.append("Images partagées en double")
     for path, page in views.items():
         if path.startswith(("fr/", "en/")) and path.split("/")[0] != page.language and not path.endswith("404.html"):
             errors.append(f"{path} · langue HTML inattendue")
@@ -208,7 +232,7 @@ def validate_html(root, base_url):
                 errors.append(f"{path} · cible absente · {link}")
             elif target.fragment and normalized in views and unquote(target.fragment) not in views[normalized].ids:
                 errors.append(f"{path} · ancre absente · {link}")
-    if images != used_images:
+    if images.keys() != used_images:
         errors.append("Images publiques inutilisées")
     for lang in LANGS:
         for path in (f"{lang}/index.html", f"{lang}/skills/index.html", f"{lang}/cards/index.html"):
@@ -236,7 +260,7 @@ def build(root, destination, site_url):
             raise ValueError("La destination doit rester hors des sources")
     with TemporaryDirectory(prefix="wiki-construction-") as temp:
         scratch = Path(temp)
-        manifest = assemble(root, scratch / "docs")
+        manifest = assemble(root, scratch / "docs", site_url)
         built = scratch / "site"
         built.mkdir()
         css = root / "styles/wiki.css"
@@ -250,6 +274,13 @@ def build(root, destination, site_url):
             settings.write_text(config(docs, built / lang, lang, site_url), encoding="utf-8")
             subprocess.run([sys.executable, "-m", "zensical", "build", "--strict", "-f", str(settings)],
                            cwd=scratch, check=True)
+        for name, expected in manifest["files"].items():
+            if ASSET.fullmatch(name):
+                target = built / shared_path(name)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(root / "generated" / name, target)
+                if stamp(target) != expected:
+                    raise ValueError(f"Image modifiée pendant la construction · {name}")
         links = ' · '.join(f'<a hreflang="{lang}" href="{lang}/">{name}</a>'
                            for lang, name in (("fr", "Français"), ("en", "English")))
         build_id = escape(manifest["steam_build_id"])
