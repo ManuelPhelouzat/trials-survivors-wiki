@@ -16,12 +16,14 @@ from urllib.parse import unquote, urljoin, urlsplit
 
 LANGS = ("fr", "en")
 PAGE = re.compile(r"(fr|en)/(skills|cards|constellations)/[a-z0-9][a-z0-9-]*\.md")
-IMAGE_NAME = r"(constellations|stats)/([0-9a-f]{64})\.png"
+IMAGE_NAME = r"(constellations|stats|skills)/([0-9a-f]{64})\.png"
 ASSET = re.compile(r"public-assets/" + IMAGE_NAME)
 GAME_IMAGE = re.compile(r"assets/game/" + IMAGE_NAME)
 MARKDOWN_IMAGE = re.compile(r"(!\[[^\]\n]*\]\()\.\./(public-assets/" + IMAGE_NAME + r")(\))")
-ASSET_BUDGET = 1024 * 1024
-SKILL_LINK = re.compile(r"^- \[(.*)\]\(([a-z0-9-]+\.md)\)$", re.MULTILINE)
+ASSET_BUDGET = 2 * 1024 * 1024
+SKILL_LINK = re.compile(
+    r"^- (?:!\[\]\([^\n]+?\) )?\[(.+?)\]\(([a-z0-9-]+\.md)\)(?: · [^\n]+)?$", re.MULTILINE
+)
 EDITORIAL = re.compile(r"(fr|en)/(?:index\.md|about\.md|history\.md|notes/[\w-]+\.md)", re.UNICODE)
 
 LABELS = {

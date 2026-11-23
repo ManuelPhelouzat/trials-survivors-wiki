@@ -43,7 +43,35 @@
 
 
 @media (max-width: 40rem) {
-  .md-typeset img[alt=""][src*="assets/game/constellations/"] {
+  .md-typeset p > img[alt=""][src*="assets/game/constellations/"] {
     inline-size: 3.25rem;
   }
+}
+
+.md-typeset img[src*="assets/game/skills/"],
+.md-typeset li > img[src*="assets/game/constellations/"] {
+  inline-size: 1.8rem;
+  block-size: auto;
+  vertical-align: middle;
+}
+
+.md-typeset p > img[src*="assets/game/skills/"]:only-child {
+  inline-size: 3.5rem;
+  max-inline-size: 100%;
+}
+
+.md-typeset ul:has(> li > img[src*="assets/game/constellations/"]) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+  gap: .5rem;
+  margin-inline-start: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.md-typeset ul:has(> li > img[src*="assets/game/constellations/"]) > li {
+  margin: 0;
+  padding: .45rem .6rem;
+  border: 1px solid var(--wiki-border);
+  border-radius: .3rem;
 }
