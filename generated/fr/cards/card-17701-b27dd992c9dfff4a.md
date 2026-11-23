@@ -1,0 +1,16 @@
+# Accélération des Compétences
+
+Build · 26820593
+
+[Cartes](index.md)
+
+[Faille de lave](../skills/1881746145-898b7aa0d5a0f6d3.md)
+
+## Paramètres d’amélioration
+
+Plages et paramètres enregistrés. Le tirage effectif dépend des règles du jeu.
+
+- Rare · Accélération des Compétences \(%\) 12,5 %–17,5 % (pas 0,25 %)
+- Épique · Accélération des Compétences \(%\) 15,0 %–20,0 % (pas 0,25 %)
+- Légendaire · Accélération des Compétences \(%\) 17,5 %–25,0 % (pas 0,25 %)
+

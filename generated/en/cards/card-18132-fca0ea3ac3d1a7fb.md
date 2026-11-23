@@ -1,0 +1,18 @@
+# Fire Damage
+
+Build · 26820593
+
+[Cards](index.md)
+
+[Explosive Mine](../skills/1460943605-0570135ceb0d59c2.md)
+
+## Upgrade parameters
+
+Stored ranges and parameters. Actual rolls depend on game rules.
+
+- Common · Fire Damage \(%\) 10.0%–17.5% (step 0.25%)
+- Uncommon · Fire Damage \(%\) 15.0%–22.5% (step 0.25%)
+- Rare · Fire Damage \(%\) 20.0%–27.5% (step 0.25%)
+- Epic · Fire Damage \(%\) 25.0%–35.0% (step 0.25%)
+- Legendary · Fire Damage \(%\) 25.0%–35.0% (step 0.25%) · Area of Effect \(%\) 25.0%–35.0% (step 0.25%)
+

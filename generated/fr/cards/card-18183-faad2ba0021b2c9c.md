@@ -1,0 +1,18 @@
+# Accélération des Compétences
+
+Build · 26820593
+
+[Cartes](index.md)
+
+[Grenades à fragmentation](../skills/703224111-02552f8c1a09268b.md)
+
+## Paramètres d’amélioration
+
+Plages et paramètres enregistrés. Le tirage effectif dépend des règles du jeu.
+
+- Commun · Accélération des Compétences \(%\) 7,5 %–12,5 % (pas 0,25 %)
+- Peu commun · Accélération des Compétences \(%\) 9,0 %–15,0 % (pas 0,25 %)
+- Rare · Accélération des Compétences \(%\) 12,5 %–20,0 % (pas 0,25 %)
+- Épique · Accélération des Compétences \(%\) 17,5 %–27,5 % (pas 0,25 %)
+- Légendaire · Accélération des Compétences \(%\) 17,5 %–27,5 % (pas 0,25 %) · Nombre de Projectiles 3–4 (pas 1)
+

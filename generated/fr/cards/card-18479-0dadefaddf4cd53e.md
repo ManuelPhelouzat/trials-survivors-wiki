@@ -1,0 +1,17 @@
+# Chance de Choc
+
+Build · 26820593
+
+[Cartes](index.md)
+
+[Héraut du Tonnerre](../skills/1906814884-1910353d76835e72.md)
+
+## Paramètres d’amélioration
+
+Plages et paramètres enregistrés. Le tirage effectif dépend des règles du jeu.
+
+- Commun · Chance de Choc \(%\) 10,0 %–17,5 % (pas 0,25 %)
+- Peu commun · Chance de Choc \(%\) 15,0 %–22,5 % (pas 0,25 %)
+- Rare · Chance de Choc \(%\) 20,0 %–25,0 % (pas 0,25 %)
+- Épique · Chance de Choc \(%\) 22,5 %–30,0 % (pas 0,25 %)
+

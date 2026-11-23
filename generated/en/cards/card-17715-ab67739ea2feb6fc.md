@@ -1,0 +1,16 @@
+# Ignite Chance
+
+Build · 26820593
+
+[Cards](index.md)
+
+[Rolling Magma](../skills/949104880-63a02c9c857d490b.md)
+
+## Upgrade parameters
+
+Stored ranges and parameters. Actual rolls depend on game rules.
+
+- Rare · Ignite Chance \(%\) 20.0%–25.0% (step 0.25%)
+- Epic · Ignite Chance \(%\) 22.5%–30.0% (step 0.25%)
+- Legendary · Ignite Chance \(%\) 27.5%–35.0% (step 0.25%)
+

@@ -1,0 +1,15 @@
+# Zone d’Effet
+
+Build · 26820593
+
+[Cartes](index.md)
+
+[Mine Explosive](../skills/1460943605-0570135ceb0d59c2.md)
+
+## Paramètres d’amélioration
+
+Plages et paramètres enregistrés. Le tirage effectif dépend des règles du jeu.
+
+- Épique · Zone d’Effet \(%\) 20,0 %–27,5 % (pas 0,25 %)
+- Légendaire · Zone d’Effet \(%\) 25,0 %–35,0 % (pas 0,25 %)
+

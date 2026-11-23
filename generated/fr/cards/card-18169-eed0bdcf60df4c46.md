@@ -1,0 +1,17 @@
+# Chance de Brûlure
+
+Build · 26820593
+
+[Cartes](index.md)
+
+[Grenades à fragmentation](../skills/703224111-02552f8c1a09268b.md)
+
+## Paramètres d’amélioration
+
+Plages et paramètres enregistrés. Le tirage effectif dépend des règles du jeu.
+
+- Peu commun · Chance de Brûlure \(%\) 15,0 %–20,0 % (pas 0,25 %)
+- Rare · Chance de Brûlure \(%\) 17,5 %–22,5 % (pas 0,25 %)
+- Épique · Chance de Brûlure \(%\) 20,0 %–25,0 % (pas 0,25 %)
+- Légendaire · Chance de Brûlure \(%\) 27,5 %–35,0 % (pas 0,25 %)
+

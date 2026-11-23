@@ -1,0 +1,16 @@
+# Chain Distance
+
+Build · 26820593
+
+[Cards](index.md)
+
+[Chain Lightning](../skills/1860354619-f19656a1896f331b.md)
+
+## Upgrade parameters
+
+Stored ranges and parameters. Actual rolls depend on game rules.
+
+- Rare · Chain Distance \(%\) 18.0%–25.0% (step 0.25%)
+- Epic · Chain Distance \(%\) 22.5%–30.0% (step 0.25%)
+- Legendary · Chain Distance \(%\) 27.5%–40.0% (step 0.25%)
+

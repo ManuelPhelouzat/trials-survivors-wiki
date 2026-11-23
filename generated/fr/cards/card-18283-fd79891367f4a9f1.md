@@ -1,0 +1,18 @@
+# Accélération des Compétences
+
+Build · 26820593
+
+[Cartes](index.md)
+
+[Lame Corrodée](../skills/1883324318-2c41f8fde93555b3.md)
+
+## Paramètres d’amélioration
+
+Plages et paramètres enregistrés. Le tirage effectif dépend des règles du jeu.
+
+- Commun · Accélération des Compétences \(%\) 7,5 %–12,5 % (pas 0,25 %)
+- Peu commun · Accélération des Compétences \(%\) 10,0 %–17,5 % (pas 0,25 %)
+- Rare · Accélération des Compétences \(%\) 15,0 %–22,5 % (pas 0,25 %)
+- Épique · Accélération des Compétences \(%\) 25,0 %–32,5 % (pas 0,25 %)
+- Légendaire · Accélération des Compétences \(%\) 35,0 %–40,0 % (pas 0,25 %)
+

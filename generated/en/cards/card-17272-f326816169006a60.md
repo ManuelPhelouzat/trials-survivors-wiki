@@ -1,0 +1,16 @@
+# Ailment Duration
+
+Build · 26820593
+
+[Cards](index.md)
+
+[Ice Storm](../skills/239803909-18b054bfae556459.md)
+
+## Upgrade parameters
+
+Stored ranges and parameters. Actual rolls depend on game rules.
+
+- Rare · Ailment Duration \(%\) 15.0%–22.5% (step 0.25%)
+- Epic · Ailment Duration \(%\) 20.0%–27.5% (step 0.25%)
+- Legendary · Ailment Duration \(%\) 30.0%–40.0% (step 0.25%)
+

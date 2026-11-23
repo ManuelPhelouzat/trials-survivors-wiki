@@ -1,0 +1,16 @@
+# Accélération des Compétences
+
+Build · 26820593
+
+[Cartes](index.md)
+
+[Trou noir](../skills/1916594410-ba81d54647e4d1e2.md)
+
+## Paramètres d’amélioration
+
+Plages et paramètres enregistrés. Le tirage effectif dépend des règles du jeu.
+
+- Rare · Accélération des Compétences \(%\) 7,5 %–12,5 % (pas 0,25 %)
+- Épique · Accélération des Compétences \(%\) 10,0 %–17,5 % (pas 0,25 %)
+- Légendaire · Accélération des Compétences \(%\) 20,0 %–25,0 % (pas 0,25 %)
+

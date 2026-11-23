@@ -1,0 +1,15 @@
+# Accélération des Compétences
+
+Build · 26820593
+
+[Cartes](index.md)
+
+[Boule de Givre](../skills/871329250-7b854bf6fec56d45.md)
+
+## Paramètres d’amélioration
+
+Plages et paramètres enregistrés. Le tirage effectif dépend des règles du jeu.
+
+- Épique · Accélération des Compétences \(%\) 15,0 %–22,5 % (pas 0,25 %)
+- Légendaire · Accélération des Compétences \(%\) 20,0 %–30,0 % (pas 0,25 %)
+

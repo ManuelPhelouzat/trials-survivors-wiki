@@ -1,0 +1,15 @@
+# Nombre de Transpercements
+
+Build · 26820593
+
+[Cartes](index.md)
+
+
+Carte du pool historique. Compétences concernées non déterminées.
+
+## Paramètres d’amélioration
+
+Plages et paramètres enregistrés. Le tirage effectif dépend des règles du jeu.
+
+- Légendaire · Nombre de Transpercements 1–1 (pas 0,002)
+

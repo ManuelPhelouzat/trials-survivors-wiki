@@ -1,0 +1,18 @@
+# Ability Duration
+
+Build · 26820593
+
+[Cards](index.md)
+
+[Interlaced Shot](../skills/73540217-12d951c0bca44b93.md)
+
+## Upgrade parameters
+
+Stored ranges and parameters. Actual rolls depend on game rules.
+
+- Common · Ability Duration \(%\) 10.0%–16.0% (step 0.25%)
+- Uncommon · Ability Duration \(%\) 14.0%–20.0% (step 0.25%)
+- Rare · Ability Duration \(%\) 18.0%–26.0% (step 0.25%)
+- Epic · Ability Duration \(%\) 24.0%–32.0% (step 0.25%)
+- Legendary · Ability Duration \(%\) 24.0%–32.0% (step 0.25%) · Area of Effect \(%\) 25.0%–32.5% (step 0.25%)
+

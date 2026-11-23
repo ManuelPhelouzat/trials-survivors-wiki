@@ -1,0 +1,17 @@
+# Durée des Compétences
+
+Build · 26820593
+
+[Cartes](index.md)
+
+[Magma Roulant](../skills/949104880-63a02c9c857d490b.md)
+
+## Paramètres d’amélioration
+
+Plages et paramètres enregistrés. Le tirage effectif dépend des règles du jeu.
+
+- Commun · Durée des Compétences \(%\) 7,5 %–12,5 % (pas 0,25 %)
+- Peu commun · Durée des Compétences \(%\) 10,0 %–15,0 % (pas 0,25 %)
+- Rare · Durée des Compétences \(%\) 12,5 %–20,0 % (pas 0,25 %)
+- Épique · Durée des Compétences \(%\) 17,5 %–25,0 % (pas 0,25 %)
+

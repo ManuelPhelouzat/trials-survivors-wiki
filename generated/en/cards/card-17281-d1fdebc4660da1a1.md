@@ -1,0 +1,17 @@
+# Ability Duration
+
+Build · 26820593
+
+[Cards](index.md)
+
+[Rolling Magma](../skills/949104880-63a02c9c857d490b.md)
+
+## Upgrade parameters
+
+Stored ranges and parameters. Actual rolls depend on game rules.
+
+- Common · Ability Duration \(%\) 7.5%–12.5% (step 0.25%)
+- Uncommon · Ability Duration \(%\) 10.0%–15.0% (step 0.25%)
+- Rare · Ability Duration \(%\) 12.5%–20.0% (step 0.25%)
+- Epic · Ability Duration \(%\) 17.5%–25.0% (step 0.25%)
+
