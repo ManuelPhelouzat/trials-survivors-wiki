@@ -15,7 +15,9 @@ from tempfile import TemporaryDirectory
 from urllib.parse import unquote, urljoin, urlsplit
 
 LANGS = ("fr", "en")
-PAGE = re.compile(r"(fr|en)/(skills|cards)/[a-z0-9][a-z0-9-]*\.md")
+PAGE = re.compile(r"(fr|en)/(skills|cards|constellations)/[a-z0-9][a-z0-9-]*\.md")
+ASSET = re.compile(r"public-assets/(constellations|stats)/([0-9a-f]{64})\.png")
+ASSET_BUDGET = 1024 * 1024
 SKILL_LINK = re.compile(r"^- \[(.*)\]\(([a-z0-9-]+\.md)\)$", re.MULTILINE)
 EDITORIAL = re.compile(r"(fr|en)/(?:index\.md|about\.md|history\.md|notes/[\w-]+\.md)", re.UNICODE)
 
@@ -51,9 +53,14 @@ def publication(root):
     expected = manifest["files"]
     if (manifest["schema_version"] != 1 or not re.fullmatch(r"[0-9]+", manifest["steam_build_id"])
             or any(not re.fullmatch(r"[0-9a-f]{64}", manifest[k]) for k in ("snapshot_id", "source_export_id"))
-            or set(source) != set(expected) or any(not PAGE.fullmatch(name) for name in expected)
+            or set(source) != set(expected) or any(not (PAGE.fullmatch(name) or ASSET.fullmatch(name)) for name in expected)
             or any(f"{lang}/{kind}/index.md" not in source for lang in LANGS for kind in ("skills", "cards"))):
         raise ValueError("Périmètre generated/ incohérent")
+    images = {name: expected[name] for name in expected if ASSET.fullmatch(name)}
+    if (any(stamp["sha256"] != ASSET.fullmatch(name)[2] for name, stamp in images.items())
+            or sum(stamp["size"] for stamp in images.values()) > ASSET_BUDGET
+            or len({stamp["sha256"] for stamp in images.values()}) != len(images)):
+        raise ValueError("Budget ou empreinte des images publiques incohérents")
     for name, path in source.items():
         if stamp(path) != expected[name]:
             raise ValueError(f"Fichier public altéré · {name}")
@@ -73,6 +80,12 @@ def assemble(root, docs):
             if f"{lang}/{page}.md" not in community:
                 raise ValueError(f"Page éditoriale requise · {lang}/{page}.md")
     for name, source in sorted((generated | community).items()):
+        if ASSET.fullmatch(name):
+            for lang in LANGS:
+                target = docs / lang / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(source, target)
+            continue
         target = docs / name
         target.parent.mkdir(parents=True, exist_ok=True)
         if name in community:
@@ -106,6 +119,9 @@ def config(docs, output, lang, base_url):
     items = [(names[0], "index.md"),
              (names[1], [(names[2], "skills/index.md"), *links]),
              (names[3], "cards/index.md"), (names[4], "about.md"), (names[5], "history.md")]
+
+    if (docs / "constellations/index.md").is_file():
+        items.insert(3, ("Constellations", "constellations/index.md"))
 
     def nav(rows):
         return "[" + ", ".join(f"{{{quoted(key)} = {nav(value) if isinstance(value, list) else quoted(value)}}}"
@@ -166,6 +182,8 @@ def validate_html(root, base_url):
             page.feed(source.read_text(encoding="utf-8"))
             views[path] = page
     total, external = 0, 0
+    images = {name for name in files if re.fullmatch(r"(fr|en)/" + ASSET.pattern, name)}
+    used_images = set()
     errors = []
     for path, page in views.items():
         if path.startswith(("fr/", "en/")) and path.split("/")[0] != page.language and not path.endswith("404.html"):
@@ -184,10 +202,14 @@ def validate_html(root, base_url):
             normalized = posixpath.normpath(local)
             if not local or local.endswith("/"):
                 normalized = (normalized + "/index.html") if local else "index.html"
+            if normalized in images:
+                used_images.add(normalized)
             if normalized not in files:
                 errors.append(f"{path} · cible absente · {link}")
             elif target.fragment and normalized in views and unquote(target.fragment) not in views[normalized].ids:
                 errors.append(f"{path} · ancre absente · {link}")
+    if images != used_images:
+        errors.append("Images publiques inutilisées")
     for lang in LANGS:
         for path in (f"{lang}/index.html", f"{lang}/skills/index.html", f"{lang}/cards/index.html"):
             if path not in views:

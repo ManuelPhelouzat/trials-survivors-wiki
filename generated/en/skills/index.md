@@ -2,6 +2,8 @@
 
 [Card index](../cards/index.md)
 
+[Constellations](../constellations/index.md)
+
 - [Firestorm](102469114-f84c74e9ff1d5f47.md)
 - [Staccato Volley](1042572220-3798003771cebff7.md)
 - [Storm Orb](1123779086-9714d6025e081860.md)

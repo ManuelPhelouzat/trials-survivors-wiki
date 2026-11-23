@@ -27,3 +27,22 @@
 @media (max-width: 40rem) {
   .md-typeset table:not([class]) td, .md-typeset table:not([class]) th { padding: .55rem .42rem; }
 }
+
+.md-typeset img[src*="public-assets/stats/"] {
+  inline-size: 1.2em;
+  block-size: 1.2em;
+  object-fit: contain;
+  vertical-align: text-bottom;
+}
+
+.md-typeset img[src*="public-assets/constellations/"] {
+  inline-size: 6rem;
+  max-inline-size: 100%;
+  vertical-align: middle;
+}
+
+@media (max-width: 40rem) {
+  .md-typeset img[alt=""][src*="public-assets/constellations/"] {
+    inline-size: 3.25rem;
+  }
+}
