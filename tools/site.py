@@ -24,6 +24,8 @@ ASSET_BUDGET = 2 * 1024 * 1024
 SKILL_LINK = re.compile(
     r"^- (?:!\[\]\([^\n]+?\) )?\[(.+?)\]\(([a-z0-9-]+\.md)\)(?: · [^\n]+)?$", re.MULTILINE
 )
+GROUP_LINK = re.compile(r"## !\[\]\(([^)]+)\) \[(.+?)\]\(\.\./(constellations/[a-z]+\.md)\)")
+NATIVE_LINK = re.compile(r"### (?:!\[\]\(([^)]+)\) )?\[(.+?)\]\(([a-z0-9-]+\.md)\)")
 EDITORIAL = re.compile(r"(fr|en)/(?:index\.md|about\.md|history\.md|notes/[\w-]+\.md)", re.UNICODE)
 
 LABELS = {
@@ -122,12 +124,68 @@ def quoted(value):
     return json.dumps(value, ensure_ascii=False)
 
 
+def navigation(docs, lang):
+    source = (docs / "skills/index.md").read_text(encoding="utf-8")
+    def unescape(title):
+        return re.sub(r"\\(.)", r"\1", title)
+    groups = []
+    entries = groups
+    ids, rules = [], []
+    grouped = bool(NATIVE_LINK.search(source))
+    if grouped:
+        for line in source.splitlines():
+            if heading := GROUP_LINK.fullmatch(line):
+                icon, title, path = heading.groups()
+                overview = "Fiche de constellation" if lang == "fr" else "Constellation page"
+                entries = [(overview, path)]
+                groups.append((unescape(title), entries))
+                tail = PurePosixPath(path).stem + "/"
+                group = ".md-sidebar--primary li:has(> nav > ul > li > "
+                selectors = (
+                    f'{group}a[href$="/{tail}"]) > label',
+                    f'{group}a[href="{tail}"]) > label',
+                    f'html:has(link[rel="canonical"][href$="/constellations/{tail}"]) '
+                    f'{group}a[href="././"].md-nav__link--active) > label',
+                )
+                rules.append((selectors, icon))
+            elif line.startswith("## "):
+                entries = []
+                groups.append((line[3:], entries))
+            elif skill := NATIVE_LINK.fullmatch(line):
+                icon, title, path = skill.groups()
+                entries.append((unescape(title), f"skills/{path}"))
+                ids.append(path)
+                if icon:
+                    tail = path.removesuffix(".md") + "/"
+                    selectors = (
+                        f'.md-sidebar--primary a[href="{tail}"]',
+                        f'.md-sidebar--primary a[href$="/{tail}"]',
+                        f'html:has(link[rel="canonical"][href$="/skills/{tail}"]) '
+                        '.md-sidebar--primary a[href="././"].md-nav__link--active',
+                    )
+                    rules.append((selectors, icon))
+    else:
+        for title, path in SKILL_LINK.findall(source):
+            groups.append((unescape(title), f"skills/{path}"))
+            ids.append(path)
+    expected = {page.name for page in (docs / "skills").glob("*.md")} - {"index.md"}
+    if set(ids) != expected or len(ids) != len(expected):
+        raise ValueError(f"Navigation des compétences incohérente · {lang}")
+    return groups, rules
+
+
 def config(docs, output, lang, base_url):
     names = LABELS[lang]
-    skills = (docs / "skills/index.md").read_text(encoding="utf-8")
-    links = [(re.sub(r"\\(.)", r"\1", title), f"skills/{path}") for title, path in SKILL_LINK.findall(skills)]
-    if len(links) != len(list((docs / "skills").glob("*.md"))) - 1:
-        raise ValueError(f"Navigation des compétences incohérente · {lang}")
+    links, icons = navigation(docs, lang)
+    css = docs / "styles/wiki.css"
+    if icons:
+        with css.open("a", encoding="utf-8") as stream:
+            for selectors, icon in icons:
+                selector = ", ".join(f"{item}::before" for item in selectors)
+                stream.write(f"\n{selector} {{ content: ''; background-image: url({quoted(icon)});"
+                             " background-size: contain; background-position: center; background-repeat: no-repeat;"
+                             " display: inline-block; inline-size: 1rem; block-size: 1rem;"
+                             " flex: 0 0 1rem; margin-inline-end: .36rem; vertical-align: middle; }\n")
     items = [(names[0], "index.md"),
              (names[1], [(names[2], "skills/index.md"), *links]),
              (names[3], "cards/index.md"), (names[4], "about.md"), (names[5], "history.md")]

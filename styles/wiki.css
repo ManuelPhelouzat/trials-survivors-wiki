@@ -60,18 +60,49 @@
   max-inline-size: 100%;
 }
 
-.md-typeset ul:has(> li > img[src*="assets/game/constellations/"]) {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
-  gap: .5rem;
-  margin-inline-start: 0;
-  padding: 0;
-  list-style: none;
+/* Skill and constellation headings use their own visual scales. */
+.md-typeset h1 > img[src*="assets/game/skills/"] {
+  inline-size: 3rem;
+  margin-inline-end: .35em;
 }
 
-.md-typeset ul:has(> li > img[src*="assets/game/constellations/"]) > li {
-  margin: 0;
-  padding: .45rem .6rem;
-  border: 1px solid var(--wiki-border);
-  border-radius: .3rem;
+.md-typeset h1 > img[src*="assets/game/constellations/"] {
+  inline-size: 3.5rem;
+  margin-inline-end: .35em;
+}
+
+.md-typeset h2:has(> a > img[src*="assets/game/constellations/"]),
+.md-typeset h2:has(> img[src*="assets/game/constellations/"]) {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  margin-block-end: .65rem;
+}
+
+.md-typeset h2 img[src*="assets/game/constellations/"] {
+  inline-size: 2.65rem;
+}
+
+.md-typeset h3:has(> a) > img[src*="assets/game/skills/"] {
+  margin-inline-end: .15rem;
+}
+
+.md-typeset h3:has(> img[src*="assets/game/skills/"]) + ul {
+  border-inline-start: 2px solid var(--wiki-border);
+  list-style: none;
+  margin: .35rem 0 1.25rem;
+  padding-inline: .65rem 0;
+}
+
+.md-typeset h3:has(> img[src*="assets/game/skills/"]) + ul > li {
+  margin-inline-start: 0;
+  margin-block: .35rem;
+}
+
+.md-typeset h3:has(> img[src*="assets/game/skills/"]) + ul strong {
+  color: var(--wiki-highlight);
+}
+
+@media (max-width: 40rem) {
+  .md-typeset h1 > img[src*="assets/game/"] { inline-size: 2.3rem; }
 }
