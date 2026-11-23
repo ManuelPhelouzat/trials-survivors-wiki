@@ -106,3 +106,66 @@
 @media (max-width: 40rem) {
   .md-typeset h1 > img[src*="assets/game/"] { inline-size: 2.3rem; }
 }
+
+.md-typeset .game-picker { margin: 1.3rem 0; padding: .7rem 0 0; border: 0; }
+.md-typeset .game-picker legend { font-weight: 650; }
+.game-choices { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .2rem; }
+.game-choices label {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  padding: .2rem .45rem .2rem .1rem;
+  cursor: pointer;
+  font-size: .78rem;
+}
+.game-choices input { accent-color: var(--wiki-highlight); }
+.game-choices label:has(input:focus-visible) { outline: 2px solid var(--wiki-highlight); outline-offset: 2px; }
+.game-choices label:has(input:checked) { color: var(--wiki-highlight); font-weight: 650; }
+.game-option { order: 1; flex-basis: 100%; }
+.game-choices label:not(:has(input:checked)) + .game-option { display: none; }
+.md-typeset .game-card {
+  box-sizing: border-box;
+  inline-size: min(100%, 23rem);
+  padding: 1rem 1.1rem;
+  margin-block: .55rem;
+  border: 2px solid transparent;
+  border-radius: .75rem;
+  background: linear-gradient(var(--wiki-panel), var(--wiki-panel)) padding-box,
+              linear-gradient(135deg, var(--card-from), var(--card-to)) border-box;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.md-typeset .game-card p { margin-block: .4rem; }
+.md-typeset .game-card-icon { display: block; inline-size: 2.35rem; margin: 0 auto .65rem; object-fit: contain; }
+.md-typeset .game-card-name { font-weight: 750; font-size: 1.05rem; }
+.md-typeset .game-quality {
+  color: color-mix(in srgb, var(--quality) 82%, white);
+  border-block-end: 1px solid var(--quality);
+}
+.md-typeset .game-stars { color: var(--card-from); letter-spacing: .1em; }
+.md-typeset .game-card-role, .md-typeset .game-range-label { color: var(--wiki-quiet); }
+.md-typeset .game-card ul { padding: 0; margin: .35rem 0; list-style: none; }
+.md-typeset .game-card ul li { margin-inline-start: 0; }
+.md-typeset .game-range { color: #a5ebbc; font-variant-numeric: tabular-nums; }
+.md-typeset .game-stat { color: color-mix(in srgb, var(--stat) 72%, white); }
+.md-typeset .game-upgrade-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+  gap: .5rem;
+  margin: .5rem 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+.md-typeset .game-upgrade-grid li {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: .15rem .5rem;
+  padding: .5rem;
+  border: 1px solid var(--wiki-border);
+  border-radius: .4rem;
+  overflow-wrap: anywhere;
+}
+.md-typeset .game-upgrade-grid img { grid-row: span 2; inline-size: 1.5rem; margin: 0; }
+.md-typeset .game-upgrade-grid small { color: var(--wiki-quiet); }

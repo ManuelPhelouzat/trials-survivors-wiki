@@ -6,6 +6,12 @@ Build · 26820593
 
 [Chakram](../skills/1323903390-ecacb5b389a0a5ce.md)
 
+<fieldset class="game-picker"><legend>Qualité · rang de rareté</legend><div class="game-choices"><label><input type="radio" name="quality-card-18087-ea03fddd5ebd5ceb" checked><span>Épique</span></label><div class="game-option"><section class="game-card" style="--card-from:#864aff;--card-to:#864aff"><img class="game-card-icon" alt="" src="../public-assets/skills/537190ba686360bae05bc0783c4c39a3c3f4262deb846339cb6bcc792952a644.png"><p class="game-card-name">Chakram</p><p class="game-card-quality"><span class="game-quality" style="--quality:#864aff">Épique</span> <span class="game-stars" role="img" aria-label="Rang 4 sur 5">★★★★</span></p><p class="game-card-role">Amélioration spécifique · Dégâts sur la Durée</p><p class="game-range-label">Plage sérialisée</p><ul><li><span class="game-stat" style="--stat:#4c652b">Dégâts sur la Durée (%)</span> <span class="game-range">27,5–37,5 %</span> <small>(pas 0,25 %)</small></li></ul><p><a href="#card-data">Détails techniques</a></p></section></div><label><input type="radio" name="quality-card-18087-ea03fddd5ebd5ceb"><span>Légendaire</span></label><div class="game-option"><section class="game-card" style="--card-from:#ff6720;--card-to:#ff6720"><img class="game-card-icon" alt="" src="../public-assets/skills/537190ba686360bae05bc0783c4c39a3c3f4262deb846339cb6bcc792952a644.png"><p class="game-card-name">Chakram</p><p class="game-card-quality"><span class="game-quality" style="--quality:#ff6720">Légendaire</span> <span class="game-stars" role="img" aria-label="Rang 5 sur 5">★★★★★</span></p><p class="game-card-role">Amélioration spécifique · Dégâts sur la Durée</p><p class="game-range-label">Plage sérialisée</p><ul><li><span class="game-stat" style="--stat:#4c652b">Dégâts sur la Durée (%)</span> <span class="game-range">35,0–50,0 %</span> <small>(pas 0,25 %)</small></li></ul><p><a href="#card-data">Détails techniques</a></p></section></div></div></fieldset>
+
+<div id="card-data"></div>
+
+Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 18087
+
 ## Paramètres d’amélioration
 
 Plages et paramètres enregistrés. Le tirage effectif dépend des règles du jeu.

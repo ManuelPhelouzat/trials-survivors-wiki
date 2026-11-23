@@ -16,10 +16,10 @@ from urllib.parse import unquote, urljoin, urlsplit
 
 LANGS = ("fr", "en")
 PAGE = re.compile(r"(fr|en)/(skills|cards|constellations)/[a-z0-9][a-z0-9-]*\.md")
-IMAGE_NAME = r"(constellations|stats|skills)/([0-9a-f]{64})\.png"
+IMAGE_NAME = r"(constellations|stats|skills|cards)/([0-9a-f]{64})\.png"
 ASSET = re.compile(r"public-assets/" + IMAGE_NAME)
 GAME_IMAGE = re.compile(r"assets/game/" + IMAGE_NAME)
-MARKDOWN_IMAGE = re.compile(r"(!\[[^\]\n]*\]\()\.\./(public-assets/" + IMAGE_NAME + r")(\))")
+MARKDOWN_IMAGE = re.compile(r'(!\[[^\]\n]*\]\(|src=")\.\./(public-assets/' + IMAGE_NAME + r')(\)|")')
 ASSET_BUDGET = 2 * 1024 * 1024
 SKILL_LINK = re.compile(
     r"^- (?:!\[\]\([^\n]+?\) )?\[(.+?)\]\(([a-z0-9-]+\.md)\)(?: · [^\n]+)?$", re.MULTILINE
@@ -103,7 +103,7 @@ def assemble(root, docs, base_url):
                 image = match[2]
                 if image not in generated:
                     raise ValueError(f"Image Markdown absente du manifeste · {name} · {image}")
-                return match[1] + base_url + shared_path(image) + ")"
+                return match[1] + base_url + shared_path(image) + match[5]
 
             value = source.read_text(encoding="utf-8")
             target.write_text(MARKDOWN_IMAGE.sub(shared_image, value), encoding="utf-8")
