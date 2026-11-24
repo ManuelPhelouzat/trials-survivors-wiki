@@ -1,6 +1,6 @@
 # Stats
 
-Game descriptions state the intended role. The formulas below are verified serialized expressions for Frost Ball. Runtime application, limits and stacking remain unconfirmed.
+Game descriptions state the intended role. The formulas below are verified serialized expressions. Each note states what has been verified for the build under review.
 
 <a href="@alternate/">Français</a>
 
@@ -68,9 +68,9 @@ Source Unity · ` Stat_Description_AilmentDuration ` · ` data.unity3d::sharedas
 
 ID · ` 2068885608 `
 
-Exact behaviour remains unconfirmed.
-
 **Unit** · Display unit unconfirmed
+
+Exact behaviour remains unconfirmed.
 
 Source Unity · ` data.unity3d::resources.assets ` · PathID 2786
 
@@ -148,11 +148,13 @@ Source Unity · ` Stat_Description_BleedingStack ` · ` data.unity3d::sharedasse
 
 ID · ` 536066167 `
 
-Exact behaviour remains unconfirmed.
+**Game description** · When drawing cards, they are favorably rerolled, and the highest possible rarity is kept\.
 
 **Unit** · Percentage (serialized fraction)
 
-Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16451
+Exact behaviour remains unconfirmed.
+
+Source Unity · ` Stat_Description_CardRarity ` · ` data.unity3d::sharedassets0.assets ` · PathID 16451
 
 ## <img class="stat-icon" src="../public-assets/stats/1ceeb0e531bcc028361a4a8be837f255fc3181842626853370b927d6a38d96c4.png" alt="" loading="lazy"> Chain Count { #stat-444703137 }
 
@@ -292,9 +294,9 @@ Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16462
 
 ID · ` 967725324 `
 
-Exact behaviour remains unconfirmed.
-
 **Unit** · Display unit unconfirmed
+
+Exact behaviour remains unconfirmed.
 
 Source Unity · ` data.unity3d::resources.assets ` · PathID 2787
 
@@ -302,9 +304,9 @@ Source Unity · ` data.unity3d::resources.assets ` · PathID 2787
 
 ID · ` 1402126566 `
 
-Exact behaviour remains unconfirmed.
-
 **Unit** · Display unit unconfirmed
+
+Exact behaviour remains unconfirmed.
 
 Source Unity · ` data.unity3d::resources.assets ` · PathID 2788
 
@@ -322,31 +324,47 @@ Source Unity · ` Stat_Description_DamageOverTime ` · ` data.unity3d::sharedass
 
 ID · ` 1729853715 `
 
-Exact behaviour remains unconfirmed.
+**Game description** · Influences the amount of experience gained when collecting experience orbs\.
 
 **Unit** · Percentage (serialized fraction)
 
-Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16519
+**Observed configuration** · All five ranges on the Experience Gain card and the XpMultiplier relic bonus target this stat\. · ` sharedassets0.assets PathIDs 17338, 19764 `
+
+Exact behaviour remains unconfirmed.
+
+Source Unity · ` Stat_Description_ExperienceGain ` · ` data.unity3d::sharedassets0.assets ` · PathID 16519
 
 ## <img class="stat-icon" src="../public-assets/stats/3b81dea6160b385bae6ca408eec4122d539d8cf1f32e370156f80e2de3003324.png" alt="" loading="lazy"> Experience Quality &#40;%&#41; { #stat-1605897117 }
 
 ID · ` 1605897117 `
 
-Exact behaviour remains unconfirmed.
+**Game description** · When experience orbs drop, they are favorably rerolled to ensure the highest possible tier\.
 
 **Unit** · Percentage (serialized fraction)
 
-Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16520
+**Verified code and formula** · Feeds the orb\-quality multiplier in the loot context\. A value of 25% gives a multiplier of 1\.25\.
+
+**Scope of verification** · How the multiplier translates into orb tiers and probabilities remains unconfirmed\.
+
+<div class="wiki-formula"><p class="formula-title">Serialized formula <small>· PathID 16555</small></p><p class="formula-expression">(1 + <wbr><a class="stat-reference" href="@wiki/stats/#stat-1605897117"><img class="stat-icon" src="../public-assets/stats/3b81dea6160b385bae6ca408eec4122d539d8cf1f32e370156f80e2de3003324.png" alt="" loading="lazy"> Experience Quality (%) <small class="formula-scope">(source)</small></a>)</p><details class="formula-source"><summary>Original Unity formula</summary><pre><code>(1+GetStat(source,1605897117))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16555</p><p><code>_data / _formula</code></p></details></div>
+
+` ARPGEntity_Module_LootProvider.PopulateContext · RVA 0x880090 · sharedassets0.assets PathID 20433 `
+
+Source Unity · ` Stat_Description_ExperienceQuality ` · ` data.unity3d::sharedassets0.assets ` · PathID 16520
 
 ## <img class="stat-icon" src="../public-assets/stats/ac65159a3402be815cc98fce02ed6f70d83dbf22bb9c4f580c512b888833115b.png" alt="" loading="lazy"> Fate Dice { #stat-811283535 }
 
 ID · ` 811283535 `
 
-Exact behaviour remains unconfirmed.
+**Game description** · Currency that can be used to alter card draws in various ways\.
 
 **Unit** · Display unit unconfirmed
 
-Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16464
+**Observed configuration** · The Fate Dice configuration points to this starting stat\. The in\-game balance is a separate attribute\. · ` sharedassets0.assets PathID 19184 · _starterStat, _relatedAttribute `
+
+Exact behaviour remains unconfirmed.
+
+Source Unity · ` Currency_Description_FateDice ` · ` data.unity3d::sharedassets0.assets ` · PathID 16464
 
 ## <img class="stat-icon" src="../public-assets/stats/0d1f55d63169e7287be71fd637aa74af704ad45d0f327d9508f6e88dfca2e1cb.png" alt="" loading="lazy"> Fire Damage { #stat-1196196874 }
 
@@ -472,29 +490,51 @@ Source Unity · ` Stat_Description_Maxhealth ` · ` data.unity3d::sharedassets0.
 
 ID · ` 2045188474 `
 
-Exact behaviour remains unconfirmed.
+**Game description** · Influences the amount of items dropped from foes or chests\.
 
 **Unit** · Percentage (serialized fraction)
 
-Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16478
+**Verified code and formula** · Feeds the quantity multiplier in the loot context\. A value of 25% gives a multiplier of 1\.25\.
+
+**Scope of verification** · Rounding and which loot tables are affected remain unconfirmed\.
+
+<div class="wiki-formula"><p class="formula-title">Serialized formula <small>· PathID 16553</small></p><p class="formula-expression">(1 + <wbr><a class="stat-reference" href="@wiki/stats/#stat-2045188474"><img class="stat-icon" src="../public-assets/stats/36c3eeae8ed160c547de1d6b9aa6c1e98807e5270e99c4b773a94d77dd38c215.png" alt="" loading="lazy"> Item Quantity (%) <small class="formula-scope">(source)</small></a>)</p><details class="formula-source"><summary>Original Unity formula</summary><pre><code>(1+GetStat(source,2045188474))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16553</p><p><code>_data / _formula</code></p></details></div>
+
+` ARPGEntity_Module_LootProvider.PopulateContext · RVA 0x880090 · sharedassets0.assets PathID 20433 `
+
+Source Unity · ` Stat_Description_ItemQuantity ` · ` data.unity3d::sharedassets0.assets ` · PathID 16478
 
 ## <img class="stat-icon" src="../public-assets/stats/d5d1ae9af9f21456d4c3a6c6eff56af91422edb515371f4ed7181a8de4539290.png" alt="" loading="lazy"> Item Rarity &#40;%&#41; { #stat--155820065 }
 
 ID · ` -155820065 `
 
-Exact behaviour remains unconfirmed.
+**Game description** · When items drop, they are favorably rerolled, and the highest possible rarity is retained\.
 
 **Unit** · Percentage (serialized fraction)
 
-Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16479
+**Verified code and formula** · Feeds the rarity multiplier in the loot context\. A value of 25% gives a multiplier of 1\.25\.
+
+**Scope of verification** · How the multiplier translates into rerolls and probabilities remains unconfirmed\.
+
+<div class="wiki-formula"><p class="formula-title">Serialized formula <small>· PathID 16554</small></p><p class="formula-expression">(1 + <wbr><a class="stat-reference" href="@wiki/stats/#stat--155820065"><img class="stat-icon" src="../public-assets/stats/d5d1ae9af9f21456d4c3a6c6eff56af91422edb515371f4ed7181a8de4539290.png" alt="" loading="lazy"> Item Rarity (%) <small class="formula-scope">(source)</small></a>)</p><details class="formula-source"><summary>Original Unity formula</summary><pre><code>(1+GetStat(source,-155820065))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16554</p><p><code>_data / _formula</code></p></details></div>
+
+` ARPGEntity_Module_LootProvider.PopulateContext · RVA 0x880090 · sharedassets0.assets PathID 20433 `
+
+Source Unity · ` Stat_Description_ItemRarity ` · ` data.unity3d::sharedassets0.assets ` · PathID 16479
 
 ## <span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Level { #stat--412912059 }
 
 ID · ` -412912059 `
 
-Exact behaviour remains unconfirmed.
+**Unit** · Integer level
 
-**Unit** · Display unit unconfirmed
+**Behaviour confirmed in code** · The value read by the level module\. The module converts it to an integer by truncating the fractional part\.
+
+**Scope of verification** · Level also feeds the XP attribute maximum\. The progression cap remains unconfirmed\.
+
+<div class="wiki-formula"><p class="formula-title">Serialized formula <small>· PathID 16387</small></p><p class="formula-expression">(((<a class="stat-reference" href="@wiki/stats/#stat--412912059"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Level <small class="formula-scope">(source)</small></a> ^ <wbr>Branch((Branch((<a class="stat-reference" href="@wiki/stats/#stat--412912059"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Level <small class="formula-scope">(source)</small></a> &lt; <wbr>80), <wbr>1.4, <wbr>(1.08 + <wbr>(<a class="stat-reference" href="@wiki/stats/#stat--412912059"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Level <small class="formula-scope">(source)</small></a> × <wbr>0.004))) ≤ <wbr>1.7), <wbr>Branch((<a class="stat-reference" href="@wiki/stats/#stat--412912059"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Level <small class="formula-scope">(source)</small></a> &lt; <wbr>80), <wbr>1.4, <wbr>(1.08 + <wbr>(<a class="stat-reference" href="@wiki/stats/#stat--412912059"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Level <small class="formula-scope">(source)</small></a> × <wbr>0.004))), <wbr>1.7)) × <wbr>16.7 × <wbr><a class="stat-reference" href="@wiki/stats/#stat-1969273205"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> XP divisor <small class="formula-scope">(source)</small></a>) − <wbr>12)</p><details class="formula-source"><summary>Original Unity formula</summary><pre><code>(((GetStat(source,-412912059)^Branch((Branch((GetStat(source,-412912059) &lt; 80),1.4,(1.08+(GetStat(source,-412912059)*0.004))) &lt;= 1.7),Branch((GetStat(source,-412912059) &lt; 80),1.4,(1.08+(GetStat(source,-412912059)*0.004))),1.7))*16.7*GetStat(source,1969273205))-12)</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16387</p><p><code>maxValue / _formulaLinker / _formula · rid 126617797533631111</code></p></details></div>
+
+` sharedassets0.assets PathID 22969 · _levelStat ` · ` ARPGEntity_Module_Level.GetCurrentLevel · RVA 0x87F7C0 `
 
 Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16480
 
@@ -592,11 +632,19 @@ Source Unity · ` Stat_Description_MaximumPhysicalResistance ` · ` data.unity3d
 
 ID · ` 411658539 `
 
-Exact behaviour remains unconfirmed.
+**Game description** · Influences your movement speed\.
 
 **Unit** · Display unit unconfirmed
 
-Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16490
+**Verified configuration and formula** · Base speed used in the movement calculation for several enemies\. The calculation applies the movement\-speed modifier and accounts for slow resistance when that modifier is negative\.
+
+**Scope of verification** · Movement units and the exact scope of the calculation for players remain unconfirmed\.
+
+<div class="wiki-formula"><p class="formula-title">Serialized formula <small>· PathID 16580</small></p><p class="formula-expression">Branch((<a class="stat-reference" href="@wiki/stats/#stat--1427501575"><img class="stat-icon" src="../public-assets/stats/855423c4aa13c2b6b239a05a81cbf6e7d778b297dc166cf01f217da04fffff02.png" alt="" loading="lazy"> Movement Speed (%) <small class="formula-scope">(source)</small></a> ≥ <wbr>0), <wbr>(<a class="stat-reference" href="@wiki/stats/#stat-411658539"><img class="stat-icon" src="../public-assets/stats/855423c4aa13c2b6b239a05a81cbf6e7d778b297dc166cf01f217da04fffff02.png" alt="" loading="lazy"> Movement Speed <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/stats/#stat--1427501575"><img class="stat-icon" src="../public-assets/stats/855423c4aa13c2b6b239a05a81cbf6e7d778b297dc166cf01f217da04fffff02.png" alt="" loading="lazy"> Movement Speed (%) <small class="formula-scope">(source)</small></a>)), <wbr>((<a class="stat-reference" href="@wiki/stats/#stat-411658539"><img class="stat-icon" src="../public-assets/stats/855423c4aa13c2b6b239a05a81cbf6e7d778b297dc166cf01f217da04fffff02.png" alt="" loading="lazy"> Movement Speed <small class="formula-scope">(source)</small></a> × <wbr><a class="stat-reference" href="@wiki/stats/#stat--1844310897"><img class="stat-icon" src="../public-assets/stats/dbe1f970860c6d3afa9a0ff92fd3ed835e3cdefc63f35b307a706f1ff138aef0.png" alt="" loading="lazy"> Slow Resistance <small class="formula-scope">(source)</small></a>) + <wbr>(<a class="stat-reference" href="@wiki/stats/#stat-411658539"><img class="stat-icon" src="../public-assets/stats/855423c4aa13c2b6b239a05a81cbf6e7d778b297dc166cf01f217da04fffff02.png" alt="" loading="lazy"> Movement Speed <small class="formula-scope">(source)</small></a> × <wbr>(2 ^ <wbr><a class="stat-reference" href="@wiki/stats/#stat--1427501575"><img class="stat-icon" src="../public-assets/stats/855423c4aa13c2b6b239a05a81cbf6e7d778b297dc166cf01f217da04fffff02.png" alt="" loading="lazy"> Movement Speed (%) <small class="formula-scope">(source)</small></a>) × <wbr>(1 − <wbr><a class="stat-reference" href="@wiki/stats/#stat--1844310897"><img class="stat-icon" src="../public-assets/stats/dbe1f970860c6d3afa9a0ff92fd3ed835e3cdefc63f35b307a706f1ff138aef0.png" alt="" loading="lazy"> Slow Resistance <small class="formula-scope">(source)</small></a>))))</p><details class="formula-source"><summary>Original Unity formula</summary><pre><code>Branch((GetStat(source,-1427501575) &gt;= 0),(GetStat(source,411658539)*(1+GetStat(source,-1427501575))),((GetStat(source,411658539)*GetStat(source,-1844310897))+(GetStat(source,411658539)*(2^GetStat(source,-1427501575))*(1-GetStat(source,-1844310897)))))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16580</p><p><code>_data / _formula</code></p></details></div>
+
+` sharedassets0.assets PathID 18700 · AIMovementData_Chase_Bat `
+
+Source Unity · ` Stat_Description_MovementSpeed ` · ` data.unity3d::sharedassets0.assets ` · PathID 16490
 
 ## <img class="stat-icon" src="../public-assets/stats/855423c4aa13c2b6b239a05a81cbf6e7d778b297dc166cf01f217da04fffff02.png" alt="" loading="lazy"> Movement Speed &#40;%&#41; { #stat--1427501575 }
 
@@ -612,29 +660,51 @@ Source Unity · ` Stat_Description_MovementSpeed ` · ` data.unity3d::sharedasse
 
 ID · ` 1910202602 `
 
-Exact behaviour remains unconfirmed.
+**Game description** · Maximum overheal as a percentage of maximum health\. Increasing capacity does not fill the reserve\.
 
 **Unit** · Percentage (serialized fraction)
 
-Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16491
+**Verified configuration and formula** · The capacity of the overheal reserve is maximum health multiplied by this fraction\.
+
+**Scope of verification** · The game description states how a capacity change affects the current reserve\.
+
+<div class="wiki-formula"><p class="formula-title">Serialized formula <small>· PathID 16582</small></p><p class="formula-expression">(<span class="formula-technical"><code>GetAttributeMax(source,-1822657751)</code></span> × <wbr><a class="stat-reference" href="@wiki/stats/#stat-1910202602"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Overheal Capacity (%) <small class="formula-scope">(source)</small></a>)</p><details class="formula-source"><summary>Original Unity formula</summary><pre><code>(GetAttributeMax(source,-1822657751)*GetStat(source,1910202602))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16582</p><p><code>_data / _formula</code></p></details></div>
+
+` sharedassets0.assets PathID 16386 · maxValue `
+
+Source Unity · ` Stat_Title_OverhealCapacity_Description ` · ` data.unity3d::sharedassets0.assets ` · PathID 16491
 
 ## <span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Overheal Decay Amount { #stat-1910202603 }
 
 ID · ` 1910202603 `
 
-Exact behaviour remains unconfirmed.
+**Game description** · Overheal lost at each decay tick\. Zero disables decay\.
 
-**Unit** · Display unit unconfirmed
+**Unit** · Overheal HP per tick
 
-Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16492
+**Verified code and formula** · Base overheal lost per tick\. The module applies the decay modifier before removing overheal\. An effective loss of zero disables decay\.
+
+**Scope of verification** · Removal cannot exceed the remaining reserve\. The serialized base loss is 0\.5 HP\.
+
+<div class="wiki-formula"><p class="formula-title">Serialized formula <small>· PathID 2896</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/stats/#stat-1910202603"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Overheal Decay Amount <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/stats/#stat-1111063864"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Overheal decay amount (%) <small class="formula-scope">(source)</small></a>))</p><details class="formula-source"><summary>Original Unity formula</summary><pre><code>(GetStat(source,1910202603)*(1+GetStat(source,1111063864)))</code></pre><p>Unity · <code>data.unity3d::resources.assets</code> · PathID 2896</p><p><code>_decayAmount / _formulaLinker / _formula · rid 7608466127516598827</code></p></details></div>
+
+` ARPGEntity_Module_Temp_OverhealDecay.Tick · RVA 0x888260 `
+
+Source Unity · ` Stat_Title_OverhealDecayAmount_Description ` · ` data.unity3d::sharedassets0.assets ` · PathID 16492
 
 ## <span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Overheal decay amount &#40;%&#41; { #stat-1111063864 }
 
 ID · ` 1111063864 `
 
-Exact behaviour remains unconfirmed.
-
 **Unit** · Percentage (serialized fraction)
+
+**Verified code and formula** · Modifies the amount of overheal lost per tick\. The base loss is multiplied by one plus this fraction\.
+
+**Scope of verification** · The module ignores a negative or non\-finite loss and never removes more than the remaining reserve\.
+
+<div class="wiki-formula"><p class="formula-title">Serialized formula <small>· PathID 2896</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/stats/#stat-1910202603"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Overheal Decay Amount <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/stats/#stat-1111063864"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Overheal decay amount (%) <small class="formula-scope">(source)</small></a>))</p><details class="formula-source"><summary>Original Unity formula</summary><pre><code>(GetStat(source,1910202603)*(1+GetStat(source,1111063864)))</code></pre><p>Unity · <code>data.unity3d::resources.assets</code> · PathID 2896</p><p><code>_decayAmount / _formulaLinker / _formula · rid 7608466127516598827</code></p></details></div>
+
+` ARPGEntity_Module_Temp_OverhealDecay.Tick · RVA 0x888260 `
 
 Source Unity · ` data.unity3d::resources.assets ` · PathID 2789
 
@@ -642,11 +712,19 @@ Source Unity · ` data.unity3d::resources.assets ` · PathID 2789
 
 ID · ` 1910202604 `
 
-Exact behaviour remains unconfirmed.
+**Game description** · Seconds between overheal decay ticks\. Healing does not restart this timer\.
 
-**Unit** · Display unit unconfirmed
+**Unit** · Seconds
 
-Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16493
+**Verified code and formula** · Time between overheal ticks\. The module only applies decay with a finite, strictly positive interval\.
+
+**Scope of verification** · The serialized base interval is approximately 0\.2 seconds\. How healing affects the timer is stated in the game description\.
+
+<div class="wiki-formula"><p class="formula-title">Serialized formula <small>· PathID 2896</small></p><p class="formula-expression"><a class="stat-reference" href="@wiki/stats/#stat-1910202604"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Overheal Decay Interval <small class="formula-scope">(source)</small></a></p><details class="formula-source"><summary>Original Unity formula</summary><pre><code>GetStat(source,1910202604)</code></pre><p>Unity · <code>data.unity3d::resources.assets</code> · PathID 2896</p><p><code>_decayInterval / _formulaLinker / _formula · rid 7608466127516598829</code></p></details></div>
+
+` ARPGEntity_Module_Temp_OverhealDecay.Tick · RVA 0x888260 `
+
+Source Unity · ` Stat_Title_OverhealDecayInterval_Description ` · ` data.unity3d::sharedassets0.assets ` · PathID 16493
 
 ## <img class="stat-icon" src="../public-assets/stats/1bd93df45ed7c71e0c9e9f89ceba4ec764d4a96afcaeb57efc59a131ade027cf.png" alt="" loading="lazy"> Physical Damage { #stat--1329040019 }
 
@@ -798,9 +876,9 @@ Source Unity · ` Stat_Description_ProjectileSpeed ` · ` data.unity3d::sharedas
 
 ID · ` -1031067952 `
 
-Exact behaviour remains unconfirmed.
-
 **Unit** · Display unit unconfirmed
+
+Exact behaviour remains unconfirmed.
 
 Source Unity · ` data.unity3d::resources.assets ` · PathID 2790
 
@@ -808,9 +886,9 @@ Source Unity · ` data.unity3d::resources.assets ` · PathID 2790
 
 ID · ` 1712048563 `
 
-Exact behaviour remains unconfirmed.
-
 **Unit** · Display unit unconfirmed
+
+Exact behaviour remains unconfirmed.
 
 Source Unity · ` data.unity3d::resources.assets ` · PathID 2791
 
@@ -868,9 +946,15 @@ Source Unity · ` Stat_Description_Tenacity ` · ` data.unity3d::sharedassets0.a
 
 ID · ` 830812871 `
 
-Exact behaviour remains unconfirmed.
-
 **Unit** · Display unit unconfirmed
+
+**Verified configuration and formula** · Base delay used to recover a charge in the verified evade setups, including Flame Dash\.
+
+**Scope of verification** · The display unit and other recharge conditions remain unconfirmed\.
+
+<div class="wiki-formula"><p class="formula-title">Serialized formula <small>· PathID 16600</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/stats/#stat-830812871"><img class="stat-icon" src="../public-assets/stats/8634a9b53a54481dc9558adcaad82ad1914921856f7f0cd910951d750c32e608.png" alt="" loading="lazy"> Stamina cooldown <small class="formula-scope">(source)</small></a> × <wbr>(1 / <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/stats/#stat--485591111"><img class="stat-icon" src="../public-assets/stats/8634a9b53a54481dc9558adcaad82ad1914921856f7f0cd910951d750c32e608.png" alt="" loading="lazy"> Stamina recovery rate (%) <small class="formula-scope">(source)</small></a>)))</p><details class="formula-source"><summary>Original Unity formula</summary><pre><code>(GetStat(source,830812871)*(1/(1+GetStat(source,-485591111))))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16600</p><p><code>_data / _formula</code></p></details></div>
+
+` sharedassets0.assets PathID 16376 · _stackCooldownFormula `
 
 Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16515
 
@@ -878,9 +962,15 @@ Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16515
 
 ID · ` -412042601 `
 
-Exact behaviour remains unconfirmed.
+**Unit** · Charges
 
-**Unit** · Display unit unconfirmed
+**Verified configuration and formula** · Sets the maximum charge count in the verified evade setups, including Flame Dash\.
+
+**Scope of verification** · The final conversion to an integer and other consumers remain unconfirmed\.
+
+<div class="wiki-formula"><p class="formula-title">Serialized formula <small>· PathID 16599</small></p><p class="formula-expression"><a class="stat-reference" href="@wiki/stats/#stat--412042601"><img class="stat-icon" src="../public-assets/stats/8634a9b53a54481dc9558adcaad82ad1914921856f7f0cd910951d750c32e608.png" alt="" loading="lazy"> Stamina point max <small class="formula-scope">(source)</small></a></p><details class="formula-source"><summary>Original Unity formula</summary><pre><code>GetStat(source,-412042601)</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16599</p><p><code>_data / _formula</code></p></details></div>
+
+` sharedassets0.assets PathID 16376 · _maxStackFormula `
 
 Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16516
 
@@ -888,9 +978,15 @@ Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16516
 
 ID · ` -485591111 `
 
-Exact behaviour remains unconfirmed.
-
 **Unit** · Percentage (serialized fraction)
+
+**Verified configuration and formula** · A positive rate reduces the charge recovery delay in the verified setups\. The base delay is divided by one plus the rate\.
+
+**Scope of verification** · This formula applies to Flame Dash and other setups that reference it\.
+
+<div class="wiki-formula"><p class="formula-title">Serialized formula <small>· PathID 16600</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/stats/#stat-830812871"><img class="stat-icon" src="../public-assets/stats/8634a9b53a54481dc9558adcaad82ad1914921856f7f0cd910951d750c32e608.png" alt="" loading="lazy"> Stamina cooldown <small class="formula-scope">(source)</small></a> × <wbr>(1 / <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/stats/#stat--485591111"><img class="stat-icon" src="../public-assets/stats/8634a9b53a54481dc9558adcaad82ad1914921856f7f0cd910951d750c32e608.png" alt="" loading="lazy"> Stamina recovery rate (%) <small class="formula-scope">(source)</small></a>)))</p><details class="formula-source"><summary>Original Unity formula</summary><pre><code>(GetStat(source,830812871)*(1/(1+GetStat(source,-485591111))))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16600</p><p><code>_data / _formula</code></p></details></div>
+
+` sharedassets0.assets PathID 16376 · _stackCooldownFormula `
 
 Source Unity · ` data.unity3d::resources.assets ` · PathID 2792
 
@@ -898,9 +994,9 @@ Source Unity · ` data.unity3d::resources.assets ` · PathID 2792
 
 ID · ` -1417792752 `
 
-Exact behaviour remains unconfirmed.
-
 **Unit** · Display unit unconfirmed
+
+Exact behaviour remains unconfirmed.
 
 Source Unity · ` data.unity3d::resources.assets ` · PathID 2793
 
@@ -908,8 +1004,14 @@ Source Unity · ` data.unity3d::resources.assets ` · PathID 2793
 
 ID · ` 1969273205 `
 
-Exact behaviour remains unconfirmed.
+**Unit** · Dimensionless multiplier
 
-**Unit** · Display unit unconfirmed
+**Verified configuration and formula** · This factor multiplies the level\-dependent part of the experience maximum\. The constant 12 is subtracted after multiplication\.
+
+**Scope of verification** · This is the formula for the level module’s XP attribute\. How this factor is assigned during a run remains unconfirmed\.
+
+<div class="wiki-formula"><p class="formula-title">Serialized formula <small>· PathID 16387</small></p><p class="formula-expression">(((<a class="stat-reference" href="@wiki/stats/#stat--412912059"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Level <small class="formula-scope">(source)</small></a> ^ <wbr>Branch((Branch((<a class="stat-reference" href="@wiki/stats/#stat--412912059"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Level <small class="formula-scope">(source)</small></a> &lt; <wbr>80), <wbr>1.4, <wbr>(1.08 + <wbr>(<a class="stat-reference" href="@wiki/stats/#stat--412912059"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Level <small class="formula-scope">(source)</small></a> × <wbr>0.004))) ≤ <wbr>1.7), <wbr>Branch((<a class="stat-reference" href="@wiki/stats/#stat--412912059"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Level <small class="formula-scope">(source)</small></a> &lt; <wbr>80), <wbr>1.4, <wbr>(1.08 + <wbr>(<a class="stat-reference" href="@wiki/stats/#stat--412912059"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> Level <small class="formula-scope">(source)</small></a> × <wbr>0.004))), <wbr>1.7)) × <wbr>16.7 × <wbr><a class="stat-reference" href="@wiki/stats/#stat-1969273205"><span class="stat-icon-missing" role="img" aria-label="Icon unverified" title="Icon unverified">◇</span> XP divisor <small class="formula-scope">(source)</small></a>) − <wbr>12)</p><details class="formula-source"><summary>Original Unity formula</summary><pre><code>(((GetStat(source,-412912059)^Branch((Branch((GetStat(source,-412912059) &lt; 80),1.4,(1.08+(GetStat(source,-412912059)*0.004))) &lt;= 1.7),Branch((GetStat(source,-412912059) &lt; 80),1.4,(1.08+(GetStat(source,-412912059)*0.004))),1.7))*16.7*GetStat(source,1969273205))-12)</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16387</p><p><code>maxValue / _formulaLinker / _formula · rid 126617797533631111</code></p></details></div>
+
+` sharedassets0.assets PathID 22969 · _xpAttribute ` · ` sharedassets0.assets PathID 16387 · maxValue `
 
 Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16518
