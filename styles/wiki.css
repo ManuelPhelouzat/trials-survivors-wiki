@@ -151,7 +151,7 @@
 }
 .md-typeset .game-stars {
   display: block;
-  color: var(--card-from);
+  color: var(--quality);
   letter-spacing: .12em;
   margin-block-start: .15rem;
 }
@@ -160,24 +160,50 @@
 .md-typeset .game-card ul li { margin-inline-start: 0; }
 .md-typeset .game-range { color: #a5ebbc; font-variant-numeric: tabular-nums; }
 .md-typeset .game-stat { color: color-mix(in srgb, var(--stat) 72%, white); }
+.game-stars-empty { color: var(--wiki-quiet); }
 .md-typeset .game-upgrade-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
-  gap: .5rem;
-  margin: .5rem 0 1rem;
-  padding: 0;
-  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.75rem), 1fr));
+  gap: .75rem;
+  margin-block: .5rem 1rem;
+  align-items: start;
 }
-.md-typeset .game-upgrade-grid li {
+.md-typeset .game-upgrade-grid .game-card {
   margin: 0;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: .15rem .5rem;
-  padding: .5rem;
-  border: 1px solid var(--wiki-border);
-  border-radius: .4rem;
-  overflow-wrap: anywhere;
+  inline-size: 100%;
+  max-inline-size: 22rem;
+  padding: .7rem .6rem;
 }
-.md-typeset .game-upgrade-grid img { grid-row: span 2; inline-size: 1.5rem; margin: 0; }
-.md-typeset .game-upgrade-grid small { color: var(--wiki-quiet); }
+.md-typeset .game-upgrade-grid .game-card-icon { inline-size: 2.2rem; margin-block-end: .35rem; }
+.md-typeset .game-upgrade-grid .game-card-name { font-size: .9rem; }
+.md-typeset .game-upgrade-grid .game-choices label { font-size: .72rem; padding: .1rem .25rem; }
+.md-typeset .game-stat-card {
+  --card-from: var(--wiki-border);
+  --card-to: var(--card-from);
+}
+.game-stat-card:has(input[value="1"]:checked) { --card-from: var(--rank-1); }
+.game-stat-card:has(input[value="2"]:checked) { --card-from: var(--rank-2); }
+.game-stat-card:has(input[value="3"]:checked) { --card-from: var(--rank-3); }
+.game-stat-card:has(input[value="4"]:checked) { --card-from: var(--rank-4); }
+.game-stat-card:has(input[value="5"]:checked) { --card-from: var(--rank-5); }
+.md-typeset .game-stat-card .game-picker { margin: .4rem 0; padding: .25rem 0; min-inline-size: 0; }
+.game-stat-card .game-choices { justify-content: center; }
+.game-card-source { font-size: .75rem; }
+.md-typeset .stat-icon, .md-typeset .stat-icon-missing {
+  display: inline-block;
+  inline-size: 1.25em;
+  block-size: 1.25em;
+  object-fit: contain;
+  vertical-align: middle;
+}
+.md-typeset [id^="stat-"] { scroll-margin-top: 4.5rem; }
+.md-typeset [id^="stat-"]:target { color: var(--wiki-highlight); }
+.md-typeset .evolution-upgrades {
+  margin-block: .75rem 1.25rem;
+  border-block-end: 1px solid var(--wiki-border);
+  padding-block-end: .45rem;
+}
+.md-typeset .evolution-upgrades > summary {
+  cursor: pointer;
+  color: var(--wiki-highlight);
+}

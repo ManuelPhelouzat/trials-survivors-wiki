@@ -1,12 +1,14 @@
-# Ability Haste
+# <a class="stat-reference" href="@wiki/stats/#stat--858402365"><img class="stat-icon" src="../public-assets/stats/3d1b8135c0792796b6d5d9016c5f2633b1d6b574aef42b684f3f2d461f0b6706.png" alt="" loading="lazy"> Ability Haste (%)</a>
 
 Build · 26820593
 
 [Cards](index.md)
 
+[Stats](../stats/index.md)
+
 [Cleansing Fire](../skills/2120043263-d10e6ef5a7510d7f.md)
 
-<fieldset class="game-picker"><legend>Quality · rarity rank</legend><div class="game-choices"><label><input type="radio" name="quality-card-17832-ec25b1712dcffa1e" checked><span>Epic</span></label><div class="game-option"><section class="game-card" style="--card-from:#864aff;--card-to:#864aff"><img class="game-card-icon" alt="" src="../public-assets/skills/cdcbd01911ead7b111661a8a0bdf03d6b2913c6e8e691ea89db9497ca91a41fb.png"><p class="game-card-name">Cleansing Fire Of Weakening</p><p class="game-card-quality"><span class="game-quality" style="--quality:#864aff">Epic</span> <span class="game-stars" role="img" aria-label="Rank 4 of 5">★★★★</span></p><p class="game-card-role">Skill upgrade · Ability Haste</p><p class="game-range-label">Serialized range</p><ul><li><span class="game-stat" style="--stat:#ccfffd">Ability Haste (%)</span> <span class="game-range">15.0–20.0%</span> <small>(step 0.25%)</small></li></ul><p><a href="#card-data">Technical details</a></p></section></div><label><input type="radio" name="quality-card-17832-ec25b1712dcffa1e"><span>Legendary</span></label><div class="game-option"><section class="game-card" style="--card-from:#ff6720;--card-to:#ff6720"><img class="game-card-icon" alt="" src="../public-assets/skills/cdcbd01911ead7b111661a8a0bdf03d6b2913c6e8e691ea89db9497ca91a41fb.png"><p class="game-card-name">Cleansing Fire Of Weakening</p><p class="game-card-quality"><span class="game-quality" style="--quality:#ff6720">Legendary</span> <span class="game-stars" role="img" aria-label="Rank 5 of 5">★★★★★</span></p><p class="game-card-role">Skill upgrade · Ability Haste</p><p class="game-range-label">Serialized range</p><ul><li><span class="game-stat" style="--stat:#ccfffd">Ability Haste (%)</span> <span class="game-range">17.5–25.0%</span> <small>(step 0.25%)</small></li></ul><p><a href="#card-data">Technical details</a></p></section></div></div></fieldset>
+<section class="game-card game-stat-card" data-card="card-17832-ec25b1712dcffa1e" style="--rank-4:#864aff;--rank-5:#ff6720"><img class="game-card-icon" alt="" src="../public-assets/skills/cdcbd01911ead7b111661a8a0bdf03d6b2913c6e8e691ea89db9497ca91a41fb.png"><p class="game-card-name"><span class="game-stat" style="--stat:#ccfffd"><a class="stat-reference" href="@wiki/stats/#stat--858402365"><img class="stat-icon" src="../public-assets/stats/3d1b8135c0792796b6d5d9016c5f2633b1d6b574aef42b684f3f2d461f0b6706.png" alt="" loading="lazy"> Ability Haste (%)</a></span></p><p class="game-card-role">Skill upgrade · Cleansing Fire Of Weakening</p><p class="game-range-label">Serialized range</p><fieldset class="game-picker"><legend>Quality</legend><div class="game-choices"><label><input type="radio" name="quality-card-17832-ec25b1712dcffa1e" value="4" checked><span>Epic</span></label><div class="game-option"><p class="game-card-quality"><span class="game-quality" style="--quality:#864aff">Epic</span> <span class="game-stars" style="--quality:#864aff" role="img" aria-label="Epic · Rank 4 of 5">★★★★<span class="game-stars-empty">☆</span></span></p><ul><li><span class="game-range">15.0–20.0%</span> <small>(step 0.25%)</small></li></ul></div><label><input type="radio" name="quality-card-17832-ec25b1712dcffa1e" value="5"><span>Legendary</span></label><div class="game-option"><p class="game-card-quality"><span class="game-quality" style="--quality:#ff6720">Legendary</span> <span class="game-stars" style="--quality:#ff6720" role="img" aria-label="Legendary · Rank 5 of 5">★★★★★</span></p><ul><li><span class="game-range">17.5–25.0%</span> <small>(step 0.25%)</small></li></ul></div></div></fieldset><p class="game-card-source"><a href="#card-data">Technical details</a></p></section>
 
 <div id="card-data"></div>
 
@@ -16,6 +18,6 @@ Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 17832
 
 Stored ranges and parameters. Actual rolls depend on game rules.
 
-- Epic · Ability Haste \(%\) 15.0%–20.0% (step 0.25%)
-- Legendary · Ability Haste \(%\) 17.5%–25.0% (step 0.25%)
+- Epic · <a class="stat-reference" href="@wiki/stats/#stat--858402365"><img class="stat-icon" src="../public-assets/stats/3d1b8135c0792796b6d5d9016c5f2633b1d6b574aef42b684f3f2d461f0b6706.png" alt="" loading="lazy"> Ability Haste (%)</a> 15.0%–20.0% (step 0.25%)
+- Legendary · <a class="stat-reference" href="@wiki/stats/#stat--858402365"><img class="stat-icon" src="../public-assets/stats/3d1b8135c0792796b6d5d9016c5f2633b1d6b574aef42b684f3f2d461f0b6706.png" alt="" loading="lazy"> Ability Haste (%)</a> 17.5%–25.0% (step 0.25%)
 

@@ -15,7 +15,9 @@ from tempfile import TemporaryDirectory
 from urllib.parse import unquote, urljoin, urlsplit
 
 LANGS = ("fr", "en")
-PAGE = re.compile(r"(fr|en)/(skills|cards|constellations)/[a-z0-9][a-z0-9-]*\.md")
+STAT_PAGES = {"fr": ("Caractéristiques", "caracteristiques"), "en": ("Stats", "stats")}
+WIKI_ROUTE = re.compile(r'href="@(wiki|alternate)/(cards/[a-z0-9-]+/|stats/|caracteristiques/)?(?=[#"])')
+PAGE = re.compile(r"(fr|en)/(?:(?:skills|cards|constellations)/[a-z0-9][a-z0-9-]*|(?:stats|caracteristiques)/index)\.md")
 IMAGE_NAME = r"(constellations|stats|skills|cards)/([0-9a-f]{64})\.png"
 ASSET = re.compile(r"public-assets/" + IMAGE_NAME)
 GAME_IMAGE = re.compile(r"assets/game/" + IMAGE_NAME)
@@ -106,6 +108,15 @@ def assemble(root, docs, base_url):
                 return match[1] + base_url + shared_path(image) + match[5]
 
             value = source.read_text(encoding="utf-8")
+            lang = name.split("/")[0]
+            other = "en" if lang == "fr" else "fr"
+
+            def wiki_link(match):
+                target_lang, route = ((lang, match[2]) if match[1] == "wiki"
+                                      else (other, STAT_PAGES[other][1] + "/"))
+                return f'href="{base_url}{target_lang}/{route}'
+
+            value = WIKI_ROUTE.sub(wiki_link, value)
             target.write_text(MARKDOWN_IMAGE.sub(shared_image, value), encoding="utf-8")
     for note in sorted(community):
         web_path = PurePosixPath(note)
@@ -192,6 +203,10 @@ def config(docs, output, lang, base_url):
 
     if (docs / "constellations/index.md").is_file():
         items.insert(3, ("Constellations", "constellations/index.md"))
+
+    stat_title, stat_route = STAT_PAGES[lang]
+    if (docs / stat_route / "index.md").is_file():
+        items.insert(3, (stat_title, f"{stat_route}/index.md"))
 
     def nav(rows):
         return "[" + ", ".join(f"{{{quoted(key)} = {nav(value) if isinstance(value, list) else quoted(value)}}}"

@@ -1,12 +1,14 @@
-# Ailment Duration
+# <a class="stat-reference" href="@wiki/stats/#stat--132752378"><img class="stat-icon" src="../public-assets/stats/754ee6e7b29ece2a6010beca144a42e4527f892b68130e851aac03dd25f01656.png" alt="" loading="lazy"> Ailment Duration (%)</a>
 
 Build · 26820593
 
 [Cards](index.md)
 
+[Stats](../stats/index.md)
+
 [Blessed Bell](../skills/773581977-72b51c4414d1ab75.md)
 
-<fieldset class="game-picker"><legend>Quality · rarity rank</legend><div class="game-choices"><label><input type="radio" name="quality-card-17957-e35a8f6ea9ecaa38" checked><span>Epic</span></label><div class="game-option"><section class="game-card" style="--card-from:#864aff;--card-to:#864aff"><img class="game-card-icon" alt="" src="../public-assets/skills/074c659414c68798635b2abfc975f76b9349a310dc4bf06647441bb29a2024b3.png"><p class="game-card-name">Blessed Bell</p><p class="game-card-quality"><span class="game-quality" style="--quality:#864aff">Epic</span> <span class="game-stars" role="img" aria-label="Rank 4 of 5">★★★★</span></p><p class="game-card-role">Skill upgrade · Ailment Duration</p><p class="game-range-label">Serialized range</p><ul><li><span class="game-stat" style="--stat:#fff1b6">Ailment Duration (%)</span> <span class="game-range">27.5–35.0%</span> <small>(step 0.25%)</small></li></ul><p><a href="#card-data">Technical details</a></p></section></div><label><input type="radio" name="quality-card-17957-e35a8f6ea9ecaa38"><span>Legendary</span></label><div class="game-option"><section class="game-card" style="--card-from:#ff6720;--card-to:#ff6720"><img class="game-card-icon" alt="" src="../public-assets/skills/074c659414c68798635b2abfc975f76b9349a310dc4bf06647441bb29a2024b3.png"><p class="game-card-name">Blessed Bell</p><p class="game-card-quality"><span class="game-quality" style="--quality:#ff6720">Legendary</span> <span class="game-stars" role="img" aria-label="Rank 5 of 5">★★★★★</span></p><p class="game-card-role">Skill upgrade · Ailment Duration</p><p class="game-range-label">Serialized range</p><ul><li><span class="game-stat" style="--stat:#fff1b6">Ailment Duration (%)</span> <span class="game-range">37.5–50.0%</span> <small>(step 0.25%)</small></li></ul><p><a href="#card-data">Technical details</a></p></section></div></div></fieldset>
+<section class="game-card game-stat-card" data-card="card-17957-e35a8f6ea9ecaa38" style="--rank-4:#864aff;--rank-5:#ff6720"><img class="game-card-icon" alt="" src="../public-assets/skills/074c659414c68798635b2abfc975f76b9349a310dc4bf06647441bb29a2024b3.png"><p class="game-card-name"><span class="game-stat" style="--stat:#fff1b6"><a class="stat-reference" href="@wiki/stats/#stat--132752378"><img class="stat-icon" src="../public-assets/stats/754ee6e7b29ece2a6010beca144a42e4527f892b68130e851aac03dd25f01656.png" alt="" loading="lazy"> Ailment Duration (%)</a></span></p><p class="game-card-role">Skill upgrade · Blessed Bell</p><p class="game-range-label">Serialized range</p><fieldset class="game-picker"><legend>Quality</legend><div class="game-choices"><label><input type="radio" name="quality-card-17957-e35a8f6ea9ecaa38" value="4" checked><span>Epic</span></label><div class="game-option"><p class="game-card-quality"><span class="game-quality" style="--quality:#864aff">Epic</span> <span class="game-stars" style="--quality:#864aff" role="img" aria-label="Epic · Rank 4 of 5">★★★★<span class="game-stars-empty">☆</span></span></p><ul><li><span class="game-range">27.5–35.0%</span> <small>(step 0.25%)</small></li></ul></div><label><input type="radio" name="quality-card-17957-e35a8f6ea9ecaa38" value="5"><span>Legendary</span></label><div class="game-option"><p class="game-card-quality"><span class="game-quality" style="--quality:#ff6720">Legendary</span> <span class="game-stars" style="--quality:#ff6720" role="img" aria-label="Legendary · Rank 5 of 5">★★★★★</span></p><ul><li><span class="game-range">37.5–50.0%</span> <small>(step 0.25%)</small></li></ul></div></div></fieldset><p class="game-card-source"><a href="#card-data">Technical details</a></p></section>
 
 <div id="card-data"></div>
 
@@ -16,6 +18,6 @@ Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 17957
 
 Stored ranges and parameters. Actual rolls depend on game rules.
 
-- Epic · Ailment Duration \(%\) 27.5%–35.0% (step 0.25%)
-- Legendary · Ailment Duration \(%\) 37.5%–50.0% (step 0.25%)
+- Epic · <a class="stat-reference" href="@wiki/stats/#stat--132752378"><img class="stat-icon" src="../public-assets/stats/754ee6e7b29ece2a6010beca144a42e4527f892b68130e851aac03dd25f01656.png" alt="" loading="lazy"> Ailment Duration (%)</a> 27.5%–35.0% (step 0.25%)
+- Legendary · <a class="stat-reference" href="@wiki/stats/#stat--132752378"><img class="stat-icon" src="../public-assets/stats/754ee6e7b29ece2a6010beca144a42e4527f892b68130e851aac03dd25f01656.png" alt="" loading="lazy"> Ailment Duration (%)</a> 37.5%–50.0% (step 0.25%)
 
