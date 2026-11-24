@@ -1,7 +1,7 @@
 """Construit et contrôle les deux sites Zensical sans outillage d’extraction."""
 
 import argparse
-from hashlib import file_digest
+from hashlib import file_digest, sha256
 from html import escape
 from html.parser import HTMLParser
 import json
@@ -322,6 +322,30 @@ def validate_html(root, base_url):
             "bytes": sum(file.stat().st_size for file in files.values())}
 
 
+def prioritize_stat_search(site, source):
+    # Points d'insertion du worker livré par zensical-ui 0.0.43.
+    before_tokenization = b"le(),ce(),"
+    before_pagination = b"we({handler:Me,size:10}),"
+    workers = list((site / "assets/javascripts/workers").glob("search.*.min.js"))
+    if len(workers) != 1:
+        raise ValueError("Worker Zensical de recherche introuvable ou ambigu")
+    worker, = workers
+    original = worker.read_bytes()
+    if any(original.count(marker) != 1 for marker in (before_tokenization, before_pagination)):
+        raise ValueError("Le worker Zensical a changé. Vérifiez les hooks de recherche.")
+    patched = source.read_bytes() + b"\n" + original.replace(
+        before_tokenization, b"wikiStatSearch.capture," + before_tokenization
+    ).replace(before_pagination, b"wikiStatSearch.rank," + before_pagination)
+    patched = b'"use strict";\n' + patched
+    name = f"search.{sha256(patched).hexdigest()[:16]}.min.js"
+    for page in site.rglob("*.html"):
+        content = page.read_bytes()
+        if worker.name.encode() in content:
+            page.write_bytes(content.replace(worker.name.encode(), name.encode()))
+    worker.with_name(name).write_bytes(patched)
+    worker.unlink()
+
+
 def build(root, destination, site_url):
     base = urlsplit(site_url)
     if (base.scheme not in ("https", "http") or not base.netloc or base.query or base.fragment
@@ -349,6 +373,8 @@ def build(root, destination, site_url):
             settings.write_text(config(docs, built / lang, lang, site_url), encoding="utf-8")
             subprocess.run([sys.executable, "-m", "zensical", "build", "--strict", "-f", str(settings)],
                            cwd=scratch, check=True)
+            if (docs / STAT_PAGES[lang][1] / "index.md").is_file():
+                prioritize_stat_search(built / lang, root / "tools/stat-search.js")
         for name, expected in manifest["files"].items():
             if ASSET.fullmatch(name):
                 target = built / shared_path(name)
