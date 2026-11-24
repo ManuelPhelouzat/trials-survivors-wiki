@@ -12,9 +12,7 @@ Identifiant · ` -858402365 `
 
 **Unité** · Pourcentage (fraction sérialisée)
 
-- Calcul de la recharge · ` (GetStat(source,-1565260718)/(1+GetStat(source,-858402365))) ` · PathID 16592
-  - source · ` -1565260718 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--1565260718"><img class="stat-icon" src="../public-assets/stats/08b283c173ddeee4d0c9da754febd02c1f119216a91506d9b67faef2c285c77f.png" alt="" loading="lazy"> Recharge</a>
-  - source · ` -858402365 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--858402365"><img class="stat-icon" src="../public-assets/stats/3d1b8135c0792796b6d5d9016c5f2633b1d6b574aef42b684f3f2d461f0b6706.png" alt="" loading="lazy"> Accélération des Compétences (%)</a>
+<div class="wiki-formula"><p class="formula-title">Calcul de la recharge <small>· PathID 16592</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/caracteristiques/#stat--1565260718"><img class="stat-icon" src="../public-assets/stats/08b283c173ddeee4d0c9da754febd02c1f119216a91506d9b67faef2c285c77f.png" alt="" loading="lazy"> Recharge <small class="formula-scope">(source)</small></a> / <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat--858402365"><img class="stat-icon" src="../public-assets/stats/3d1b8135c0792796b6d5d9016c5f2633b1d6b574aef42b684f3f2d461f0b6706.png" alt="" loading="lazy"> Accélération des Compétences (%) <small class="formula-scope">(source)</small></a>))</p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>(GetStat(source,-1565260718)/(1+GetStat(source,-858402365)))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16592</p><p><code>_data / _formula · offset 64</code></p></details></div>
 
 Source Unity · ` Stat_Description_AbilityHaste ` · ` data.unity3d::sharedassets0.assets ` · PathID 16444
 
@@ -86,9 +84,7 @@ Identifiant · ` 299172729 `
 
 **Unité** · Pourcentage (fraction sérialisée)
 
-- Calcul de la chance de gel · ` (GetStat(source,299172729)*(1+GetStat(source,1897309765))) ` · PathID 16585
-  - source · ` 299172729 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-299172729"><img class="stat-icon" src="../public-assets/stats/94dbc9f7dab76bc073a82be3ec13fd9fb1bfb5829ef12728858457fb62a978ac.png" alt="" loading="lazy"> Chance de Gel</a>
-  - source · ` 1897309765 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-1897309765"><img class="stat-icon" src="../public-assets/stats/94dbc9f7dab76bc073a82be3ec13fd9fb1bfb5829ef12728858457fb62a978ac.png" alt="" loading="lazy"> Chance de Gel (%)</a>
+<div class="wiki-formula"><p class="formula-title">Calcul de la chance de gel <small>· PathID 16585</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/caracteristiques/#stat-299172729"><img class="stat-icon" src="../public-assets/stats/94dbc9f7dab76bc073a82be3ec13fd9fb1bfb5829ef12728858457fb62a978ac.png" alt="" loading="lazy"> Chance de Gel <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat-1897309765"><img class="stat-icon" src="../public-assets/stats/94dbc9f7dab76bc073a82be3ec13fd9fb1bfb5829ef12728858457fb62a978ac.png" alt="" loading="lazy"> Chance de Gel (%) <small class="formula-scope">(source)</small></a>))</p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>(GetStat(source,299172729)*(1+GetStat(source,1897309765)))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16585</p><p><code>_data / _formula · offset 76</code></p></details></div>
 
 Source Unity · ` Stat_Description_ChillChance ` · ` data.unity3d::sharedassets0.assets ` · PathID 16455
 
@@ -100,9 +96,7 @@ Identifiant · ` 1897309765 `
 
 **Unité** · Pourcentage (fraction sérialisée)
 
-- Calcul de la chance de gel · ` (GetStat(source,299172729)*(1+GetStat(source,1897309765))) ` · PathID 16585
-  - source · ` 299172729 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-299172729"><img class="stat-icon" src="../public-assets/stats/94dbc9f7dab76bc073a82be3ec13fd9fb1bfb5829ef12728858457fb62a978ac.png" alt="" loading="lazy"> Chance de Gel</a>
-  - source · ` 1897309765 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-1897309765"><img class="stat-icon" src="../public-assets/stats/94dbc9f7dab76bc073a82be3ec13fd9fb1bfb5829ef12728858457fb62a978ac.png" alt="" loading="lazy"> Chance de Gel (%)</a>
+<div class="wiki-formula"><p class="formula-title">Calcul de la chance de gel <small>· PathID 16585</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/caracteristiques/#stat-299172729"><img class="stat-icon" src="../public-assets/stats/94dbc9f7dab76bc073a82be3ec13fd9fb1bfb5829ef12728858457fb62a978ac.png" alt="" loading="lazy"> Chance de Gel <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat-1897309765"><img class="stat-icon" src="../public-assets/stats/94dbc9f7dab76bc073a82be3ec13fd9fb1bfb5829ef12728858457fb62a978ac.png" alt="" loading="lazy"> Chance de Gel (%) <small class="formula-scope">(source)</small></a>))</p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>(GetStat(source,299172729)*(1+GetStat(source,1897309765)))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16585</p><p><code>_data / _formula · offset 76</code></p></details></div>
 
 Source Unity · ` Stat_Description_ChillChance ` · ` data.unity3d::sharedassets0.assets ` · PathID 16454
 
@@ -254,11 +248,7 @@ Identifiant · ` 2056331723 `
 
 **Unité** · Unité d’affichage à confirmer
 
-- Calcul des dégâts de froid · ` (GetStat(source,2056331723)*(1+GetStat(source,562078803))*GetStat(source,-1015916763)*(1-GetStat(target,1932233781))) ` · PathID 16556
-  - source · ` -1015916763 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--1015916763"><img class="stat-icon" src="../public-assets/stats/ce3c9110b789b436e8dcbdf0361bb0c8fa99537c51f0496316f0e504d2c4f28e.png" alt="" loading="lazy"> Multiplicateur de dégâts de froid</a>
-  - source · ` 562078803 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-562078803"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid (%)</a>
-  - source · ` 2056331723 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-2056331723"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid</a>
-  - cible · ` 1932233781 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-1932233781"><img class="stat-icon" src="../public-assets/stats/ee2184517ae4fd276a247cac66a7d98bd34c95fc7d65285bc278748967a32d2a.png" alt="" loading="lazy"> Résistance au Froid (%)</a>
+<div class="wiki-formula"><p class="formula-title">Calcul des dégâts de froid <small>· PathID 16556</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/caracteristiques/#stat-2056331723"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat-562078803"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid (%) <small class="formula-scope">(source)</small></a>) × <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat--1015916763"><img class="stat-icon" src="../public-assets/stats/ce3c9110b789b436e8dcbdf0361bb0c8fa99537c51f0496316f0e504d2c4f28e.png" alt="" loading="lazy"> Multiplicateur de dégâts de froid <small class="formula-scope">(source)</small></a> × <wbr>(1 − <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat-1932233781"><img class="stat-icon" src="../public-assets/stats/ee2184517ae4fd276a247cac66a7d98bd34c95fc7d65285bc278748967a32d2a.png" alt="" loading="lazy"> Résistance au Froid (%) <small class="formula-scope">(cible)</small></a>))</p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>(GetStat(source,2056331723)*(1+GetStat(source,562078803))*GetStat(source,-1015916763)*(1-GetStat(target,1932233781)))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16556</p><p><code>_data / _formula · offset 52</code></p></details></div>
 
 Source Unity · ` Stat_Description_ColdDamage ` · ` data.unity3d::sharedassets0.assets ` · PathID 16459
 
@@ -270,11 +260,7 @@ Identifiant · ` 562078803 `
 
 **Unité** · Pourcentage (fraction sérialisée)
 
-- Calcul des dégâts de froid · ` (GetStat(source,2056331723)*(1+GetStat(source,562078803))*GetStat(source,-1015916763)*(1-GetStat(target,1932233781))) ` · PathID 16556
-  - source · ` -1015916763 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--1015916763"><img class="stat-icon" src="../public-assets/stats/ce3c9110b789b436e8dcbdf0361bb0c8fa99537c51f0496316f0e504d2c4f28e.png" alt="" loading="lazy"> Multiplicateur de dégâts de froid</a>
-  - source · ` 562078803 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-562078803"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid (%)</a>
-  - source · ` 2056331723 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-2056331723"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid</a>
-  - cible · ` 1932233781 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-1932233781"><img class="stat-icon" src="../public-assets/stats/ee2184517ae4fd276a247cac66a7d98bd34c95fc7d65285bc278748967a32d2a.png" alt="" loading="lazy"> Résistance au Froid (%)</a>
+<div class="wiki-formula"><p class="formula-title">Calcul des dégâts de froid <small>· PathID 16556</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/caracteristiques/#stat-2056331723"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat-562078803"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid (%) <small class="formula-scope">(source)</small></a>) × <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat--1015916763"><img class="stat-icon" src="../public-assets/stats/ce3c9110b789b436e8dcbdf0361bb0c8fa99537c51f0496316f0e504d2c4f28e.png" alt="" loading="lazy"> Multiplicateur de dégâts de froid <small class="formula-scope">(source)</small></a> × <wbr>(1 − <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat-1932233781"><img class="stat-icon" src="../public-assets/stats/ee2184517ae4fd276a247cac66a7d98bd34c95fc7d65285bc278748967a32d2a.png" alt="" loading="lazy"> Résistance au Froid (%) <small class="formula-scope">(cible)</small></a>))</p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>(GetStat(source,2056331723)*(1+GetStat(source,562078803))*GetStat(source,-1015916763)*(1-GetStat(target,1932233781)))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16556</p><p><code>_data / _formula · offset 52</code></p></details></div>
 
 Source Unity · ` Stat_Description_ColdDamage ` · ` data.unity3d::sharedassets0.assets ` · PathID 16457
 
@@ -346,9 +332,7 @@ Identifiant · ` -23940553 `
 
 **Unité** · Unité d’affichage à confirmer
 
-- Durée de l’altération · ` (GetStat(source,-23940553)*(1+GetStat(source,-132752378))) ` · PathID 16590
-  - source · ` -132752378 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--132752378"><img class="stat-icon" src="../public-assets/stats/754ee6e7b29ece2a6010beca144a42e4527f892b68130e851aac03dd25f01656.png" alt="" loading="lazy"> Durée des Altérations (%)</a>
-  - source · ` -23940553 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--23940553"><img class="stat-icon" src="../public-assets/stats/754ee6e7b29ece2a6010beca144a42e4527f892b68130e851aac03dd25f01656.png" alt="" loading="lazy"> Durée des Altérations</a>
+<div class="wiki-formula"><p class="formula-title">Durée de l’altération <small>· PathID 16590</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/caracteristiques/#stat--23940553"><img class="stat-icon" src="../public-assets/stats/754ee6e7b29ece2a6010beca144a42e4527f892b68130e851aac03dd25f01656.png" alt="" loading="lazy"> Durée des Altérations <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat--132752378"><img class="stat-icon" src="../public-assets/stats/754ee6e7b29ece2a6010beca144a42e4527f892b68130e851aac03dd25f01656.png" alt="" loading="lazy"> Durée des Altérations (%) <small class="formula-scope">(source)</small></a>))</p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>(GetStat(source,-23940553)*(1+GetStat(source,-132752378)))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16590</p><p><code>_data / _formula · offset 72</code></p></details></div>
 
 Source Unity · ` Stat_Description_AilmentDuration ` · ` data.unity3d::sharedassets0.assets ` · PathID 16446
 
@@ -360,9 +344,7 @@ Identifiant · ` -132752378 `
 
 **Unité** · Pourcentage (fraction sérialisée)
 
-- Durée de l’altération · ` (GetStat(source,-23940553)*(1+GetStat(source,-132752378))) ` · PathID 16590
-  - source · ` -132752378 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--132752378"><img class="stat-icon" src="../public-assets/stats/754ee6e7b29ece2a6010beca144a42e4527f892b68130e851aac03dd25f01656.png" alt="" loading="lazy"> Durée des Altérations (%)</a>
-  - source · ` -23940553 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--23940553"><img class="stat-icon" src="../public-assets/stats/754ee6e7b29ece2a6010beca144a42e4527f892b68130e851aac03dd25f01656.png" alt="" loading="lazy"> Durée des Altérations</a>
+<div class="wiki-formula"><p class="formula-title">Durée de l’altération <small>· PathID 16590</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/caracteristiques/#stat--23940553"><img class="stat-icon" src="../public-assets/stats/754ee6e7b29ece2a6010beca144a42e4527f892b68130e851aac03dd25f01656.png" alt="" loading="lazy"> Durée des Altérations <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat--132752378"><img class="stat-icon" src="../public-assets/stats/754ee6e7b29ece2a6010beca144a42e4527f892b68130e851aac03dd25f01656.png" alt="" loading="lazy"> Durée des Altérations (%) <small class="formula-scope">(source)</small></a>))</p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>(GetStat(source,-23940553)*(1+GetStat(source,-132752378)))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16590</p><p><code>_data / _formula · offset 72</code></p></details></div>
 
 Source Unity · ` Stat_Description_AilmentDuration ` · ` data.unity3d::sharedassets0.assets ` · PathID 16445
 
@@ -374,9 +356,7 @@ Identifiant · ` -1774871374 `
 
 **Unité** · Unité d’affichage à confirmer
 
-- Durée du projectile · ` (GetStat(source,-1774871374)*(1+GetStat(source,980309249))) ` · PathID 16593
-  - source · ` -1774871374 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--1774871374"><img class="stat-icon" src="../public-assets/stats/08b283c173ddeee4d0c9da754febd02c1f119216a91506d9b67faef2c285c77f.png" alt="" loading="lazy"> Durée des Compétences</a>
-  - source · ` 980309249 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-980309249"><img class="stat-icon" src="../public-assets/stats/08b283c173ddeee4d0c9da754febd02c1f119216a91506d9b67faef2c285c77f.png" alt="" loading="lazy"> Durée des Compétences (%)</a>
+<div class="wiki-formula"><p class="formula-title">Durée du projectile <small>· PathID 16593</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/caracteristiques/#stat--1774871374"><img class="stat-icon" src="../public-assets/stats/08b283c173ddeee4d0c9da754febd02c1f119216a91506d9b67faef2c285c77f.png" alt="" loading="lazy"> Durée des Compétences <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat-980309249"><img class="stat-icon" src="../public-assets/stats/08b283c173ddeee4d0c9da754febd02c1f119216a91506d9b67faef2c285c77f.png" alt="" loading="lazy"> Durée des Compétences (%) <small class="formula-scope">(source)</small></a>))</p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>(GetStat(source,-1774871374)*(1+GetStat(source,980309249)))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16593</p><p><code>_data / _formula · offset 64</code></p></details></div>
 
 Source Unity · ` Stat_Description_Duration ` · ` data.unity3d::sharedassets0.assets ` · PathID 16466
 
@@ -388,9 +368,7 @@ Identifiant · ` 980309249 `
 
 **Unité** · Pourcentage (fraction sérialisée)
 
-- Durée du projectile · ` (GetStat(source,-1774871374)*(1+GetStat(source,980309249))) ` · PathID 16593
-  - source · ` -1774871374 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--1774871374"><img class="stat-icon" src="../public-assets/stats/08b283c173ddeee4d0c9da754febd02c1f119216a91506d9b67faef2c285c77f.png" alt="" loading="lazy"> Durée des Compétences</a>
-  - source · ` 980309249 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-980309249"><img class="stat-icon" src="../public-assets/stats/08b283c173ddeee4d0c9da754febd02c1f119216a91506d9b67faef2c285c77f.png" alt="" loading="lazy"> Durée des Compétences (%)</a>
+<div class="wiki-formula"><p class="formula-title">Durée du projectile <small>· PathID 16593</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/caracteristiques/#stat--1774871374"><img class="stat-icon" src="../public-assets/stats/08b283c173ddeee4d0c9da754febd02c1f119216a91506d9b67faef2c285c77f.png" alt="" loading="lazy"> Durée des Compétences <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat-980309249"><img class="stat-icon" src="../public-assets/stats/08b283c173ddeee4d0c9da754febd02c1f119216a91506d9b67faef2c285c77f.png" alt="" loading="lazy"> Durée des Compétences (%) <small class="formula-scope">(source)</small></a>))</p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>(GetStat(source,-1774871374)*(1+GetStat(source,980309249)))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16593</p><p><code>_data / _formula · offset 64</code></p></details></div>
 
 Source Unity · ` Stat_Description_Duration ` · ` data.unity3d::sharedassets0.assets ` · PathID 16465
 
@@ -482,11 +460,7 @@ Identifiant · ` -1015916763 `
 
 **Unité** · Unité d’affichage à confirmer
 
-- Calcul des dégâts de froid · ` (GetStat(source,2056331723)*(1+GetStat(source,562078803))*GetStat(source,-1015916763)*(1-GetStat(target,1932233781))) ` · PathID 16556
-  - source · ` -1015916763 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--1015916763"><img class="stat-icon" src="../public-assets/stats/ce3c9110b789b436e8dcbdf0361bb0c8fa99537c51f0496316f0e504d2c4f28e.png" alt="" loading="lazy"> Multiplicateur de dégâts de froid</a>
-  - source · ` 562078803 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-562078803"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid (%)</a>
-  - source · ` 2056331723 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-2056331723"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid</a>
-  - cible · ` 1932233781 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-1932233781"><img class="stat-icon" src="../public-assets/stats/ee2184517ae4fd276a247cac66a7d98bd34c95fc7d65285bc278748967a32d2a.png" alt="" loading="lazy"> Résistance au Froid (%)</a>
+<div class="wiki-formula"><p class="formula-title">Calcul des dégâts de froid <small>· PathID 16556</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/caracteristiques/#stat-2056331723"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat-562078803"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid (%) <small class="formula-scope">(source)</small></a>) × <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat--1015916763"><img class="stat-icon" src="../public-assets/stats/ce3c9110b789b436e8dcbdf0361bb0c8fa99537c51f0496316f0e504d2c4f28e.png" alt="" loading="lazy"> Multiplicateur de dégâts de froid <small class="formula-scope">(source)</small></a> × <wbr>(1 − <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat-1932233781"><img class="stat-icon" src="../public-assets/stats/ee2184517ae4fd276a247cac66a7d98bd34c95fc7d65285bc278748967a32d2a.png" alt="" loading="lazy"> Résistance au Froid (%) <small class="formula-scope">(cible)</small></a>))</p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>(GetStat(source,2056331723)*(1+GetStat(source,562078803))*GetStat(source,-1015916763)*(1-GetStat(target,1932233781)))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16556</p><p><code>_data / _formula · offset 52</code></p></details></div>
 
 Source Unity · ` Stat_Description_ColdPenetration ` · ` data.unity3d::sharedassets0.assets ` · PathID 16458
 
@@ -538,8 +512,7 @@ Identifiant · ` -530233839 `
 
 **Unité** · Nombre
 
-- Nombre de projectiles · ` GetStat(source,-530233839) ` · PathID 16596
-  - source · ` -530233839 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--530233839"><img class="stat-icon" src="../public-assets/stats/b84826196b02bd72c949e89271fc22078cac98935e47069884cf1830203aafca.png" alt="" loading="lazy"> Nombre de Projectiles</a>
+<div class="wiki-formula"><p class="formula-title">Nombre de projectiles <small>· PathID 16596</small></p><p class="formula-expression"><a class="stat-reference" href="@wiki/caracteristiques/#stat--530233839"><img class="stat-icon" src="../public-assets/stats/b84826196b02bd72c949e89271fc22078cac98935e47069884cf1830203aafca.png" alt="" loading="lazy"> Nombre de Projectiles <small class="formula-scope">(source)</small></a></p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>GetStat(source,-530233839)</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16596</p><p><code>_data / _formula · offset 68</code></p></details></div>
 
 Source Unity · ` Stat_Description_ProjectileCount ` · ` data.unity3d::sharedassets0.assets ` · PathID 16507
 
@@ -731,9 +704,7 @@ Valeur de recharge lue par la formule de Boule de Givre.
 
 **Unité** · Unité d’affichage à confirmer
 
-- Calcul de la recharge · ` (GetStat(source,-1565260718)/(1+GetStat(source,-858402365))) ` · PathID 16592
-  - source · ` -1565260718 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--1565260718"><img class="stat-icon" src="../public-assets/stats/08b283c173ddeee4d0c9da754febd02c1f119216a91506d9b67faef2c285c77f.png" alt="" loading="lazy"> Recharge</a>
-  - source · ` -858402365 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--858402365"><img class="stat-icon" src="../public-assets/stats/3d1b8135c0792796b6d5d9016c5f2633b1d6b574aef42b684f3f2d461f0b6706.png" alt="" loading="lazy"> Accélération des Compétences (%)</a>
+<div class="wiki-formula"><p class="formula-title">Calcul de la recharge <small>· PathID 16592</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/caracteristiques/#stat--1565260718"><img class="stat-icon" src="../public-assets/stats/08b283c173ddeee4d0c9da754febd02c1f119216a91506d9b67faef2c285c77f.png" alt="" loading="lazy"> Recharge <small class="formula-scope">(source)</small></a> / <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat--858402365"><img class="stat-icon" src="../public-assets/stats/3d1b8135c0792796b6d5d9016c5f2633b1d6b574aef42b684f3f2d461f0b6706.png" alt="" loading="lazy"> Accélération des Compétences (%) <small class="formula-scope">(source)</small></a>))</p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>(GetStat(source,-1565260718)/(1+GetStat(source,-858402365)))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16592</p><p><code>_data / _formula · offset 64</code></p></details></div>
 
 Source Unity · ` data.unity3d::sharedassets0.assets ` · PathID 16462
 
@@ -765,11 +736,7 @@ Identifiant · ` 1932233781 `
 
 **Unité** · Pourcentage (fraction sérialisée)
 
-- Calcul des dégâts de froid · ` (GetStat(source,2056331723)*(1+GetStat(source,562078803))*GetStat(source,-1015916763)*(1-GetStat(target,1932233781))) ` · PathID 16556
-  - source · ` -1015916763 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat--1015916763"><img class="stat-icon" src="../public-assets/stats/ce3c9110b789b436e8dcbdf0361bb0c8fa99537c51f0496316f0e504d2c4f28e.png" alt="" loading="lazy"> Multiplicateur de dégâts de froid</a>
-  - source · ` 562078803 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-562078803"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid (%)</a>
-  - source · ` 2056331723 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-2056331723"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid</a>
-  - cible · ` 1932233781 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-1932233781"><img class="stat-icon" src="../public-assets/stats/ee2184517ae4fd276a247cac66a7d98bd34c95fc7d65285bc278748967a32d2a.png" alt="" loading="lazy"> Résistance au Froid (%)</a>
+<div class="wiki-formula"><p class="formula-title">Calcul des dégâts de froid <small>· PathID 16556</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/caracteristiques/#stat-2056331723"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat-562078803"><img class="stat-icon" src="../public-assets/stats/aca7991fa5e73bacaa21dc8dd32d0d432887fa33e639c5523211db6cc514ab5f.png" alt="" loading="lazy"> Dégâts de Froid (%) <small class="formula-scope">(source)</small></a>) × <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat--1015916763"><img class="stat-icon" src="../public-assets/stats/ce3c9110b789b436e8dcbdf0361bb0c8fa99537c51f0496316f0e504d2c4f28e.png" alt="" loading="lazy"> Multiplicateur de dégâts de froid <small class="formula-scope">(source)</small></a> × <wbr>(1 − <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat-1932233781"><img class="stat-icon" src="../public-assets/stats/ee2184517ae4fd276a247cac66a7d98bd34c95fc7d65285bc278748967a32d2a.png" alt="" loading="lazy"> Résistance au Froid (%) <small class="formula-scope">(cible)</small></a>))</p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>(GetStat(source,2056331723)*(1+GetStat(source,562078803))*GetStat(source,-1015916763)*(1-GetStat(target,1932233781)))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16556</p><p><code>_data / _formula · offset 52</code></p></details></div>
 
 Source Unity · ` Stat_Description_ColdResistance ` · ` data.unity3d::sharedassets0.assets ` · PathID 16461
 
@@ -911,9 +878,7 @@ Identifiant · ` 631551606 `
 
 **Unité** · Unité d’affichage à confirmer
 
-- Vitesse du projectile · ` (GetStat(source,631551606)*(1+GetStat(source,1250534698))) ` · PathID 16598
-  - source · ` 631551606 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-631551606"><img class="stat-icon" src="../public-assets/stats/9b2665345ce216ed4466bffc743727b3dc39e750b20c8f611c3b11eaf1865dc1.png" alt="" loading="lazy"> Vitesse des Projectiles</a>
-  - source · ` 1250534698 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-1250534698"><img class="stat-icon" src="../public-assets/stats/9b2665345ce216ed4466bffc743727b3dc39e750b20c8f611c3b11eaf1865dc1.png" alt="" loading="lazy"> Vitesse des Projectiles (%)</a>
+<div class="wiki-formula"><p class="formula-title">Vitesse du projectile <small>· PathID 16598</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/caracteristiques/#stat-631551606"><img class="stat-icon" src="../public-assets/stats/9b2665345ce216ed4466bffc743727b3dc39e750b20c8f611c3b11eaf1865dc1.png" alt="" loading="lazy"> Vitesse des Projectiles <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat-1250534698"><img class="stat-icon" src="../public-assets/stats/9b2665345ce216ed4466bffc743727b3dc39e750b20c8f611c3b11eaf1865dc1.png" alt="" loading="lazy"> Vitesse des Projectiles (%) <small class="formula-scope">(source)</small></a>))</p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>(GetStat(source,631551606)*(1+GetStat(source,1250534698)))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16598</p><p><code>_data / _formula · offset 68</code></p></details></div>
 
 Source Unity · ` Stat_Description_ProjectileSpeed ` · ` data.unity3d::sharedassets0.assets ` · PathID 16510
 
@@ -925,9 +890,7 @@ Identifiant · ` 1250534698 `
 
 **Unité** · Pourcentage (fraction sérialisée)
 
-- Vitesse du projectile · ` (GetStat(source,631551606)*(1+GetStat(source,1250534698))) ` · PathID 16598
-  - source · ` 631551606 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-631551606"><img class="stat-icon" src="../public-assets/stats/9b2665345ce216ed4466bffc743727b3dc39e750b20c8f611c3b11eaf1865dc1.png" alt="" loading="lazy"> Vitesse des Projectiles</a>
-  - source · ` 1250534698 ` · <a class="stat-reference" href="@wiki/caracteristiques/#stat-1250534698"><img class="stat-icon" src="../public-assets/stats/9b2665345ce216ed4466bffc743727b3dc39e750b20c8f611c3b11eaf1865dc1.png" alt="" loading="lazy"> Vitesse des Projectiles (%)</a>
+<div class="wiki-formula"><p class="formula-title">Vitesse du projectile <small>· PathID 16598</small></p><p class="formula-expression">(<a class="stat-reference" href="@wiki/caracteristiques/#stat-631551606"><img class="stat-icon" src="../public-assets/stats/9b2665345ce216ed4466bffc743727b3dc39e750b20c8f611c3b11eaf1865dc1.png" alt="" loading="lazy"> Vitesse des Projectiles <small class="formula-scope">(source)</small></a> × <wbr>(1 + <wbr><a class="stat-reference" href="@wiki/caracteristiques/#stat-1250534698"><img class="stat-icon" src="../public-assets/stats/9b2665345ce216ed4466bffc743727b3dc39e750b20c8f611c3b11eaf1865dc1.png" alt="" loading="lazy"> Vitesse des Projectiles (%) <small class="formula-scope">(source)</small></a>))</p><details class="formula-source"><summary>Formule Unity originale</summary><pre><code>(GetStat(source,631551606)*(1+GetStat(source,1250534698)))</code></pre><p>Unity · <code>data.unity3d::sharedassets0.assets</code> · PathID 16598</p><p><code>_data / _formula · offset 68</code></p></details></div>
 
 Source Unity · ` Stat_Description_ProjectileSpeed ` · ` data.unity3d::sharedassets0.assets ` · PathID 16509
 

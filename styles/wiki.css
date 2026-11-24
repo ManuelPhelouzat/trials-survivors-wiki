@@ -207,3 +207,25 @@
   cursor: pointer;
   color: var(--wiki-highlight);
 }
+
+.md-typeset .wiki-formula {
+  margin-block: .8rem;
+  padding-inline-start: .7rem;
+  border-inline-start: 2px solid var(--wiki-border);
+  min-inline-size: 0;
+}
+.md-typeset .formula-title { margin: 0; font-weight: 600; }
+.md-typeset .formula-expression { margin-block: .2rem; line-height: 1.9; overflow-wrap: anywhere; }
+.md-typeset .formula-expression .stat-reference {
+  display: inline-block;
+  max-inline-size: 100%;
+}
+.md-typeset .formula-expression .stat-reference:focus-visible {
+  outline: 2px solid var(--wiki-highlight);
+  outline-offset: 2px;
+}
+.md-typeset .formula-expression .stat-icon { inline-size: 1em; block-size: 1em; }
+.md-typeset .formula-scope { color: var(--wiki-quiet); font-size: .7em; }
+.md-typeset .formula-source { margin-block: .25rem .55rem; }
+.md-typeset .formula-source summary { cursor: pointer; font-size: .8em; }
+.md-typeset .formula-source pre > code { white-space: pre-wrap; overflow-wrap: anywhere; }
